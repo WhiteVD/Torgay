@@ -1,0 +1,165 @@
+<app-page-header title="Dashboard" icon="dashboard"></app-page-header>
+<div class="page-content">
+  <div [@fadeInOut]>
+    <div #widgetsContainer cdkDropList (cdkDropListDropped)="drop($event)" class="clear-bottom-space">
+
+      @if (!configurations.showDashboardStatistics && !configurations.showDashboardNotifications &&
+           !configurations.showDashboardTodo && !configurations.showDashboardBanner) {
+        <div class="flex center-center container mat-elevation-z4">
+          <h4>
+            {{'home.NoWidgets1' | translate}}
+            <a routerLink="/settings" fragment="preferences">{{'settings.tab.Preferences' | translate}}</a>
+            {{'home.NoWidgets2' | translate}}
+          </h4>
+        </div>
+      }
+
+      @if (configurations.showDashboardStatistics) {
+        <div id="dashboardStatistics" #dashboardStatistics class="bottom-space widget-container draggable-header"
+             [class.can-drag]="dragStartDelay === 0" cdkDrag [cdkDragStartDelay]="dragStartDelay">
+          <mat-card>
+            <mat-card-header [class.drag-handle]="showStatisticsDragIcon" cdkDragHandle>
+              <mat-card-title>
+                {{'home.StatisticsTitle' | translate}}
+                @if(showStatisticsDragIcon){
+                  <mat-icon class="more-button drag-handle"> drag_indicator</mat-icon>
+                }
+                @else{
+                  <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                    <mat-icon> more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu" xPosition="before">
+                    <button mat-menu-item (click)="configurations.showDashboardStatistics = false">
+                      <mat-icon>close</mat-icon>
+                      <span>{{'commands.Remove' | translate}}</span>
+                    </button>
+                    <button mat-menu-item (click)="showDragIcon('statistics')">
+                      <mat-icon>drag_indicator</mat-icon>
+                      <span>{{'commands.Reorder' | translate}}</span>
+                    </button>
+                  </mat-menu>
+                }
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div #dragPlaceholder *cdkDragPlaceholder class="widget-container-placeholder bottom-space"
+                   [style.minHeight.px]="getPlaceholderMinHeight(dragPlaceholder, dashboardStatistics)"></div>
+              <app-statistics-demo></app-statistics-demo>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      }
+
+      @if (configurations.showDashboardNotifications) {
+        <div id="dashboardNotifications" #dashboardNotifications class="bottom-space widget-container draggable-header"
+             [class.can-drag]="dragStartDelay === 0" cdkDrag [cdkDragStartDelay]="dragStartDelay">
+          <mat-card>
+            <mat-card-header [class.drag-handle]="showNotificationsDragIcon" cdkDragHandle>
+              <mat-card-title>
+                @if(showNotificationsDragIcon){
+                  <mat-icon class="more-button drag-handle"> drag_indicator</mat-icon>
+                }
+                @else{
+                  <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                    <mat-icon> more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu" xPosition="before">
+                    <button mat-menu-item (click)="configurations.showDashboardNotifications = false">
+                      <mat-icon>close</mat-icon>
+                      <span>{{'commands.Remove' | translate}}</span>
+                    </button>
+                    <button mat-menu-item (click)="showDragIcon('notifications')">
+                      <mat-icon>drag_indicator</mat-icon>
+                      <span>{{'commands.Reorder' | translate}}</span>
+                    </button>
+                  </mat-menu>
+                }
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div #dragPlaceholder *cdkDragPlaceholder class="widget-container-placeholder bottom-space"
+                   [style.minHeight.px]="getPlaceholderMinHeight(dragPlaceholder, dashboardNotifications)"></div>
+              <app-notifications-viewer></app-notifications-viewer>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      }
+
+      @if (configurations.showDashboardTodo) {
+        <div id="dashboardTodo" #dashboardTodo class="bottom-space widget-container draggable-header"
+             [class.can-drag]="dragStartDelay === 0" cdkDrag [cdkDragStartDelay]="dragStartDelay">
+          <mat-card>
+            <mat-card-header [class.drag-handle]="showTodoDragIcon" cdkDragHandle>
+              <mat-card-title>
+                @if(showTodoDragIcon){
+                  <mat-icon class="more-button drag-handle"> drag_indicator</mat-icon>
+                }
+                @else{
+                  <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                    <mat-icon> more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu" xPosition="before">
+                    <button mat-menu-item (click)="configurations.showDashboardTodo = false">
+                      <mat-icon>close</mat-icon>
+                      <span>{{'commands.Remove' | translate}}</span>
+                    </button>
+                    <button mat-menu-item (click)="showDragIcon('todo')">
+                      <mat-icon>drag_indicator</mat-icon>
+                      <span>{{'commands.Reorder' | translate}}</span>
+                    </button>
+                    <button mat-menu-item routerLink="/customers">
+                      <mat-icon>more_horiz</mat-icon>
+                      <span>{{'commands.Details' | translate}}</span>
+                    </button>
+                  </mat-menu>
+                }
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div #dragPlaceholder *cdkDragPlaceholder class="widget-container-placeholder bottom-space"
+                   [style.minHeight.px]="getPlaceholderMinHeight(dragPlaceholder, dashboardTodo)"></div>
+              <app-todo-demo [WidgetMode]="true"></app-todo-demo>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      }
+
+      @if (configurations.showDashboardBanner) {
+        <div id="dashboardBanner" #dashboardBanner class="bottom-space widget-container draggable-header"
+             [class.can-drag]="dragStartDelay === 0" cdkDrag [cdkDragStartDelay]="dragStartDelay">
+          <mat-card>
+            <mat-card-header [class.drag-handle]="showBannerDragIcon" cdkDragHandle>
+              <mat-card-title>
+                &nbsp;
+                @if(showBannerDragIcon){
+                  <mat-icon class="more-button drag-handle"> drag_indicator</mat-icon>
+                }
+                @else{
+                  <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                    <mat-icon> more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu" xPosition="before">
+                    <button mat-menu-item (click)="configurations.showDashboardBanner = false">
+                      <mat-icon>close</mat-icon>
+                      <span>{{'commands.Remove' | translate}}</span>
+                    </button>
+                    <button mat-menu-item (click)="showDragIcon('banner')">
+                      <mat-icon>drag_indicator</mat-icon>
+                      <span>{{'commands.Reorder' | translate}}</span>
+                    </button>
+                  </mat-menu>
+                }
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div #dragPlaceholder *cdkDragPlaceholder class="widget-container-placeholder bottom-space"
+                   [style.minHeight.px]="getPlaceholderMinHeight(dragPlaceholder, dashboardBanner)"></div>
+              <app-banner-demo></app-banner-demo>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      }
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,128 @@
+<form #form="ngForm" [formGroup]="userProfileForm" novalidate (ngSubmit)="save()"
+      [ngClass]="{'form-field--unfilled form-field--readonly' : !isEditMode}" class="flex-col" autocomplete="off">
+
+  <div class="flex-row flex-col-ltmd gap-col-1em">
+    <mat-form-field [floatLabel]="floatLabels" class="flex-1">
+      <mat-label>{{'users.editor.JobTitle' | translate}}</mat-label>
+      <input matInput formControlName="jobTitle" [readonly]="!isEditMode" />
+    </mat-form-field>
+
+    <mat-form-field [floatLabel]="floatLabels" class="flex-1">
+      <mat-label>{{'users.editor.FullName' | translate}}</mat-label>
+      <input matInput formControlName="fullName" [readonly]="!isEditMode" />
+    </mat-form-field>
+  </div>
+
+  <div class="flex-row flex-col-ltmd gap-col-1em">
+    <mat-form-field [floatLabel]="floatLabels" class="flex-1">
+      <mat-label>{{'users.editor.Email' | translate}}</mat-label>
+      <input matInput formControlName="email" [class.auto-width]="emailConfirmed === false" [readonly]="!isEditMode" />
+      @if (emailConfirmed === false) {
+        <button type="button" (click)="sendVerificationEmail()" [disabled]="isSendingEmail" class="send-confirm-email"
+                mat-button color="primary">
+          [{{'users.editor.SendVerificationEmail' | translate}}]
+        </button>
+      }
+      @if (email.hasError('required')) {
+        <mat-error>{{'users.editor.EmailRequired' | translate}}</mat-error>
+      }
+      @else if (email.hasError('email')) {
+        <mat-error>{{'users.editor.InvalidEmail' | translate}}</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field [floatLabel]="floatLabels" class="flex-1">
+      <mat-label>{{'users.editor.PhoneNumber' | translate}}</mat-label>
+      <input matInput formControlName="phoneNumber" [readonly]="!isEditMode" />
+    </mat-form-field>
+  </div>
+
+  <div class="flex-row flex-col-ltmd gap-col-1em">
+    <mat-form-field [floatLabel]="floatLabels" class="flex-nogrow50-gtsm">
+      <mat-label>{{'users.editor.UserName' | translate}}</mat-label>
+      <input matInput formControlName="userName" [readonly]="!isEditMode" autocomplete="off" />
+      @if (userName.hasError('required')) {
+        <mat-error>{{'users.editor.UserNameRequired' | translate}}</mat-error>
+      }
+    </mat-form-field>
+
+    @if (userHasPassword && isEditMode && !isNewUser && isEditingSelf &&
+         (userName.value !== user.userName || confirmedEmailChanged || isChangePassword)) {
+      <mat-form-field #currentPasswordForm
+                      [floatLabel]="floatLabels" formGroupName="password" class="flex-1">
+        <mat-label>{{'users.editor.CurrentPassword' | translate}}</mat-label>
+        <input matInput type="password" formControlName="currentPassword" />
+        @if (currentPassword.hasError('required')) {
+          <mat-error>{{'users.editor.CurrentPasswordRequired' | translate}}</mat-error>
+        }
+      </mat-form-field>
+    }
+  </div>
+
+  @if (isEditMode) {
+    <div>
+      @if (isChangePassword || isNewUser) {
+        <div formGroupName="password" class="flex-row flex-col-ltmd gap-col-1em">
+          <mat-form-field [floatLabel]="floatLabels" class="flex-1">
+            <mat-label>{{'users.editor.NewPassword' | translate}}</mat-label>
+            <input matInput type="password" formControlName="newPassword" autocomplete="off" />
+            @if (newPassword.hasError('required')) {
+              <mat-error>{{'users.editor.NewPasswordRequired' | translate}}</mat-error>
+            }
+            @else if (newPassword.hasError('pattern')) {
+              <mat-error>{{'users.editor.NewPasswordRules' | translate}}</mat-error>
+            }
+          </mat-form-field>
+          <mat-form-field [floatLabel]="floatLabels" class="flex-1">
+            <mat-label>{{'users.editor.ConfirmPassword' | translate}}</mat-label>
+            <input matInput type="password" formControlName="confirmPassword" />
+            @if (confirmPassword.hasError('required')) {
+              <mat-error>{{'users.editor.ConfirmationPasswordRequired' | translate}}</mat-error>
+            }
+            @else if (confirmPassword.hasError('notEqual')) {
+              <mat-error>{{'users.editor.PasswordMismatch' | translate}}</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      }
+      @else {
+        <button type="button" mat-raised-button class="change-password-button" (click)="changePassword()" color="primary">
+          {{'users.editor.ChangePassword' | translate}}
+        </button>
+      }
+    </div>
+  }
+
+  <div class="flex-row flex-col-ltmd gap-col-1em">
+    <mat-form-field class="flex-nogrow50-gtsm">
+      <mat-label>{{'users.editor.Roles' | translate}}</mat-label>
+      <mat-select formControlName="roles" multiple #rolesControl (openedChange)="rolesOpened(rolesControl)"
+                  (selectionChange)="rolesChanged()" [panelClass]="!isEditMode || !canAssignRoles ? 'hide' : ''">
+        @for (role of assignableRoles; track role) {
+          <mat-option [value]="role.name">
+            <span matTooltip="{{role.description}}">{{role.name}}</span>
+          </mat-option>
+        }
+      </mat-select>
+      @if (assignedRoles.hasError('required')) {
+        <mat-error>{{'users.editor.RoleRequired' | translate}}</mat-error>
+      }
+    </mat-form-field>
+  </div>
+
+  <div class="flex-row flex-col-ltmd gap-col-1em">
+    <div class="flex-nogrow50-gtsm">
+      @if (isEditMode) {
+        <mat-checkbox class="mat-dialog-content--scrollbar-fix" formControlName="isEnabled">{{'users.editor.Enabled' | translate}}</mat-checkbox>
+      }
+    </div>
+
+    <div>
+      @if (user.isLockedOut) {
+        <button type="button" mat-button (click)="unlockUser()" [disabled]="isSaving" color="accent">
+          <mat-icon>lock_open</mat-icon>{{'users.editor.Unblock' | translate}}
+        </button>
+      }
+    </div>
+  </div>
+</form>

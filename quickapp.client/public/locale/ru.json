@@ -1,0 +1,249 @@
+{
+  "app": {
+    "Login": "Войти",
+    "Welcome": "Добро пожаловать",
+    "WelcomeUser": "Добро пожаловать, {{userName}}!",
+    "WelcomeBack": "С возвращением, {{userName}}!",
+    "SessionEnded": "Сессия завершена!",
+    "SessionExpired": "Сессия истекла",
+    "SessionExpiredLoginAgain": "Ваша сессия истекла. Пожалуйста, войдите снова",
+    "SessionExpiredLoginToRenew": "Ваша сессия истекла. Войдите снова, чтобы продлить сессию",
+    "SessionRestored": "Сессия восстановлена",
+    "SessionForUserRestored": "Сессия для {{userName}} восстановлена!",
+    "PleaseRetryOperation": "Повторите последнюю операцию",
+    "Notifications": "Уведомления",
+    "New": "Новое"
+  },
+  "theme": {
+    "AzureBlue": "Лазурь и синий",
+    "RoseRed": "Роза и красный",
+    "MagentaViolet": "Пурпурный и фиолетовый",
+    "CyanOrange": "Бирюзовый и оранжевый"
+  },
+  "form": {
+    "ErrorCaption": "Недостающая информация",
+    "ErrorMessage": "Вы ввели неверную или неполную информацию. Исправьте ошибки и попробуйте снова."
+  },
+  "mainMenu": {
+    "Home": "Главная",
+    "Appointments": "Встречи",
+    "Customers": "Клиенты",
+    "Products": "Товары",
+    "Orders": "Заказы",
+    "About": "О программе",
+    "Logout": "Выйти",
+    "Login": "Войти",
+    "Account": "Аккаунт",
+    "UserAccount": "Пользовательский аккаунт",
+    "Admin": "Администрирование",
+    "Users": "Пользователи",
+    "Roles": "Роли",
+    "Profile": "Профиль",
+    "Settings": "Настройки",
+    "Theme": "Выбрать тему"
+  },
+  "pageHeader": {
+    "Dashboard": "Панель управления",
+    "Customers": "Клиенты",
+    "Products": "Товары",
+    "Orders": "Заказы",
+    "NotFound": "Не найдено",
+    "About": "О программе",
+    "Settings": "Настройки",
+    "Users": "Управление пользователями",
+    "Roles": "Управление ролями"
+  },
+  "home": {
+    "NoWidgets1": "Нет активных виджетов. Перейдите в",
+    "NoWidgets2": "для настройки доступных виджетов",
+    "StatisticsTitle": "Важная статистика"
+  },
+  "notFound": {
+    "404": "404",
+    "pageNotFound": "Запрашиваемая страница не существует",
+    "backToHome": "Вернуться на главную"
+  },
+  "settings": {
+    "tab": {
+      "Profile": "Профиль",
+      "Preferences": "Предпочтения",
+      "Users": "Пользователи",
+      "Roles": "Роли"
+    },
+    "description": {
+      "UserProfile": "Редактирование профиля",
+      "UserPreferences": "Настройка предпочтений",
+      "UserDepartments": "Отделы пользователей",
+      "UsersManagement": "Управление всеми пользователями",
+      "RolesManagement": "Управление ролями"
+    }
+  },
+  "preferences": {
+    "RELOAD": "ПЕРЕЗАГРУЗИТЬ",
+    "RESET": "СБРОС",
+    "SAVE": "СОХРАНИТЬ",
+    "SavePreferences": "Сохранить настройки?",
+    "SavePreferencesHint": "Синхронизация настроек с облаком (доступно на всех устройствах)",
+    "ReloadPreferences": "Перезагрузить настройки?",
+    "ReloadPreferencesHint": "Загрузить сохранённые настройки (локальные изменения будут потеряны)",
+    "ResetPreferences": "Сбросить настройки?",
+    "ResetPreferencesHint": "Восстановить настройки по умолчанию (только локально)",
+    "DefaultsLoaded": "Настройки по умолчанию загружены!",
+    "NewDefaults": "Новые стандарты",
+    "DefaultsReset": "Сброс настроек",
+    "SavingNewDefaults": "Сохранение новых стандартов",
+    "AccountDefaultsUpdatedSuccessfully": "Настройки аккаунта успешно обновлены",
+    "AccountDefaultsResetSuccessfully": "Сброс настроек аккаунта выполнен успешно",
+    "Language": "Язык",
+    "Default": "По умолчанию",
+    "Kazakh": "Қазақ",
+    "Russian": "Русский",
+    "English": "English",
+    "LanguageHint": "Выберите предпочитаемый язык для аккаунта",
+    "HomePage": "Домашняя страница",
+    "Dashboard": "Панель управления",
+    "Customers": "Клиенты",
+    "Products": "Товары",
+    "Orders": "Заказы",
+    "About": "О программе",
+    "Settings": "Настройки",
+    "HomePageHint": "Страница по умолчанию при входе",
+    "DashboardStatistics": "Статистика на панели",
+    "DashboardStatisticsHint": "Показывать демо-графики на панели",
+    "DashboardNotifications": "Уведомления на панели",
+    "DashboardNotificationsHint": "Показывать уведомления приложения",
+    "DashboardTodo": "Задачи на панели",
+    "DashboardTodoHint": "Показывать демо-виджет задач",
+    "DashboardBanner": "Баннер на панели",
+    "DashboardBannerHint": "Показывать демо-информационный баннер"
+  },
+  "users": {
+    "management": {
+      "Search": "Поиск пользователя",
+      "NewUser": "Новый пользователь",
+      "Edit": "Редактировать",
+      "Delete": "Удалить",
+      "EditUser": "Редактировать пользователя «{{name}}»",
+      "Title": "Должность",
+      "UserName": "Имя пользователя",
+      "FullName": "Полное имя",
+      "Email": "Email",
+      "Roles": "Роли",
+      "PhoneNumber": "Телефон"
+    },
+    "editor": {
+      "JobTitle": "Должность",
+      "UserName": "Имя пользователя",
+      "UserNameRequired": "Обязательное поле (2-200 символов)",
+      "Password": "Пароль",
+      "PasswordHint": "Требуется при изменении имени пользователя",
+      "CurrentPasswordRequired": "Требуется текущий пароль",
+      "Email": "Email",
+      "SendVerificationEmail": "Отправить письмо подтверждения",
+      "EmailRequired": "Обязательное поле (до 200 символов)",
+      "InvalidEmail": "Некорректный email",
+      "ChangePassword": "Изменить пароль",
+      "CurrentPassword": "Текущий пароль",
+      "NewPassword": "Новый пароль",
+      "NewPasswordRequired": "Обязательное поле",
+      "NewPasswordRules": "Пароль должен содержать: заглавную букву, строчную букву, цифру и спецсимвол",
+      "ConfirmPassword": "Подтверждение пароля",
+      "ConfirmationPasswordRequired": "Требуется подтверждение",
+      "PasswordMismatch": "Пароли не совпадают",
+      "Roles": "Роли",
+      "FullName": "Полное имя",
+      "RoleRequired": "Обязательный выбор роли",
+      "PhoneNumber": "Телефон",
+      "Enabled": "Активен",
+      "Unblock": "Разблокировать",
+      "Close": "Закрыть",
+      "Edit": "Редактировать",
+      "Cancel": "Отмена",
+      "Save": "Сохранить",
+      "Saving": "Сохранение..."
+    }
+  },
+  "roles": {
+    "management": {
+      "Search": "Поиск роли...",
+      "NewRole": "Новая роль",
+      "Edit": "Редактировать",
+      "Details": "Детали",
+      "Delete": "Удалить",
+      "RoleDetails": "Детали роли «{{name}}»",
+      "EditRole": "Редактировать роль «{{name}}»",
+      "Name": "Название",
+      "Description": "Описание",
+      "Users": "Пользователи"
+    },
+    "editor": {
+      "Name": "Название:",
+      "Description": "Описание:",
+      "RoleNameRequired": "Обязательное поле (2-200 символов)",
+      "SelectAll": "Выбрать все",
+      "SelectNone": "Снять выделение",
+      "Close": "Закрыть",
+      "Cancel": "Отмена",
+      "Save": "Сохранить",
+      "Saving": "Сохранение..."
+    }
+  },
+  "notifications": {
+    "Delete": "Удалить уведомление",
+    "Pin": "Закрепить",
+    "Date": "Дата",
+    "Notification": "Уведомление"
+  },
+  "statisticsDemo": {
+    "BarChart": "Гистограмма",
+    "PieChart": "Круговая диаграмма",
+    "DoughnutChart": "Кольцевая диаграмма",
+    "PolarAreaChart": "Полярная диаграмма",
+    "RadarChart": "Радарная диаграмма",
+    "LineChart": "Линейный график",
+    "ManualRefresh": "Обновить вручную!",
+    "YouClickedOnMenu": "Вы нажали на меню",
+    "DoSeriousConfiguration": "Введите значение для настройки...",
+    "Demo": "Демо",
+    "ConfigureChart": "Настроить график",
+    "Simulating": "Симуляция...",
+    "SettingsConfiguredTo": "Настройки изменены на «{{value}}»",
+    "OperationCancelled": "Операция отменена"
+  },
+  "todoDemo": {
+    "management": {
+      "Search": "Поиск задачи...",
+      "HideCompleted": "Скрыть выполненные",
+      "AddTask": "Добавить задачу",
+      "Delete": "Удалить",
+      "Important": "Пометить важным",
+      "Task": "Задача",
+      "Description": "Описание"
+    },
+    "editor": {
+      "NewTask": "Новая задача",
+      "Name": "Название",
+      "TaskNameRequired": "Обязательное название",
+      "Description": "Описание",
+      "Important": "Важная задача",
+      "AddTask": "Добавить"
+    }
+  },
+  "demo": {
+    "SamplePage": "Пример страницы"
+  },
+  "commands": {
+    "Ok": "ОК",
+    "Cancel": "Отмена",
+    "Default": "По умолчанию",
+    "Edit": "Редактировать",
+    "Save": "Сохранить",
+    "Delete": "Удалить",
+    "Reset": "Сброс",
+    "Reload": "Перезагрузить",
+    "Refresh": "Обновить",
+    "Reorder": "Изменить порядок",
+    "Remove": "Убрать",
+    "Details": "Детали"
+  }
+}

@@ -1,0 +1,121 @@
+@use 'sass:math';
+
+[dir=rtl] .app-theme-picker-menu .app-theme-picker-swatch .app-theme-radio-icon {
+  margin-left: 0;
+}
+
+.app-theme-picker-menu {
+
+  .mat-mdc-menu-content {
+    padding: 8px;
+  }
+
+  [mat-menu-item] {
+    flex: 0 0 auto;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .app-theme-picker-swatch {
+    width: 1.1em;
+    height: 1.1em;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 4px 8px;
+
+    div {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .app-theme-picker-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  .app-theme-radio-icon {
+    color: white;
+    position: relative;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .mat-icon.theme-example-icon {
+    margin-right: 0;
+    margin-left: 24px;
+    order: 1;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: solid 1px color-mix(in srgb, var(--mdc-outlined-card-outline-color) 50%, transparent);
+
+    svg {
+      vertical-align: middle;
+    }
+    // The below colors need to align with the themes defined in ThemePicker
+    &.azure-blue svg {
+      .theme-icon-background {
+        fill: #faf9fd;
+      }
+
+      .theme-icon-button {
+        fill: #005cbb;
+      }
+
+      .theme-icon-toolbar {
+        fill: #d7e3ff;
+      }
+    }
+
+    &.rose-red svg {
+      .theme-icon-background {
+        fill: #fff8f8;
+      }
+
+      .theme-icon-button {
+        fill: #ba005c;
+      }
+
+      .theme-icon-toolbar {
+        fill: #ffd9e1;
+      }
+    }
+
+    &.magenta-violet svg {
+      .theme-icon-background {
+        fill: #161215;
+      }
+
+      .theme-icon-button {
+        fill: #ffabf3;
+      }
+
+      .theme-icon-toolbar {
+        fill: #810081;
+      }
+    }
+
+    &.cyan-orange svg {
+      .theme-icon-background {
+        fill: #101414;
+      }
+
+      .theme-icon-button {
+        fill: #00dddd;
+      }
+
+      .theme-icon-toolbar {
+        fill: #004f4f;
+      }
+    }
+  }
+}
+
+.inherit-color {
+  color: inherit !important;
+}

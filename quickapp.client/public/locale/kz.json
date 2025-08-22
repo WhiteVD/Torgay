@@ -1,0 +1,249 @@
+{
+  "app": {
+    "Login": "Кіру",
+    "Welcome": "Қош келдіңіз",
+    "WelcomeUser": "Қош келдіңіз, {{userName}}!",
+    "WelcomeBack": "Қайта оралғаныңызбен, {{userName}}!",
+    "SessionEnded": "Сессия аяқталды!",
+    "SessionExpired": "Сессияның мерзімі бітті",
+    "SessionExpiredLoginAgain": "Сессия мерзімі бітті. Қайта кіріңіз",
+    "SessionExpiredLoginToRenew": "Сессия мерзімі бітті. Қайта кіріп, сессияны ұзартыңыз",
+    "SessionRestored": "Сессия қалпына келтірілді",
+    "SessionForUserRestored": "{{userName}} үшін сессия қалпына келтірілді!",
+    "PleaseRetryOperation": "Соңғы әрекетті қайталаңыз",
+    "Notifications": "Хабарламалар",
+    "New": "Жаңа"
+  },
+  "theme": {
+    "AzureBlue": "Көгілдір және көк",
+    "RoseRed": "Раушан және қызыл",
+    "MagentaViolet": "Маджента және күлгін",
+    "CyanOrange": "Циан және қызғылт сары"
+  },
+  "form": {
+    "ErrorCaption": "Ақпарат жетіспейді",
+    "ErrorMessage": "Жарамсыз немесе толық емес ақпарат енгіздіңіз. Қателерді түзетіп, қайталаңыз."
+  },
+  "mainMenu": {
+    "Home": "Басты",
+    "Appointments": "Кездесулер",
+    "Customers": "Клиенттер",
+    "Products": "Өнімдер",
+    "Orders": "Тапсырыстар",
+    "About": "Бағдарлама туралы",
+    "Logout": "Шығу",
+    "Login": "Кіру",
+    "Account": "Аккаунт",
+    "UserAccount": "Пайдаланушы аккаунты",
+    "Admin": "Әкімшілік",
+    "Users": "Пайдаланушылар",
+    "Roles": "Рөлдер",
+    "Profile": "Профиль",
+    "Settings": "Баптаулар",
+    "Theme": "Тақырыпты таңдау"
+  },
+  "pageHeader": {
+    "Dashboard": "Басқару тақтасы",
+    "Customers": "Клиенттер",
+    "Products": "Өнімдер",
+    "Orders": "Тапсырыстар",
+    "NotFound": "Табылмады",
+    "About": "Бағдарлама туралы",
+    "Settings": "Баптаулар",
+    "Users": "Пайдаланушыларды басқару",
+    "Roles": "Рөлдерді басқару"
+  },
+  "home": {
+    "NoWidgets1": "Виджеттер жоқ. Барыңыз",
+    "NoWidgets2": "виджеттерді баптау үшін",
+    "StatisticsTitle": "Мәнді статистика"
+  },
+  "notFound": {
+    "404": "404",
+    "pageNotFound": "Сұралған бет жоқ",
+    "backToHome": "Басты бетке оралу"
+  },
+  "settings": {
+    "tab": {
+      "Profile": "Профиль",
+      "Preferences": "Баптаулар",
+      "Users": "Пайдаланушылар",
+      "Roles": "Рөлдер"
+    },
+    "description": {
+      "UserProfile": "Профильді өңдеу",
+      "UserPreferences": "Баптауларды өзгерту",
+      "UserDepartments": "Пайдаланушы бөлімдері",
+      "UsersManagement": "Барлық пайдаланушыларды басқару",
+      "RolesManagement": "Рөлдерді басқару"
+    }
+  },
+  "preferences": {
+    "RELOAD": "ҚАЙТА ЖҮКТЕУ",
+    "RESET": "ҚАЛПЫНА КЕЛТІРУ",
+    "SAVE": "САҚТАУ",
+    "SavePreferences": "Баптауларды сақтау керек пе?",
+    "SavePreferencesHint": "Бұлтқа сақтау (барлық құрылғыларда синхрондалады)",
+    "ReloadPreferences": "Баптауларды қайта жүктеу керек пе?",
+    "ReloadPreferencesHint": "Сақталған баптаулар (жергілікті өзгерістер жоғалады)",
+    "ResetPreferences": "Әдепкі баптауларды қалпына келтіру керек пе?",
+    "ResetPreferencesHint": "Баптауларды әдепкі мәнге қайтару (жергілікті)",
+    "DefaultsLoaded": "Әдепкі баптаулар жүктелді!",
+    "NewDefaults": "Жаңа әдепкілер",
+    "DefaultsReset": "Баптаулар қалпына келтірілді",
+    "SavingNewDefaults": "Жаңа әдепкілер сақталуда",
+    "AccountDefaultsUpdatedSuccessfully": "Аккаунт баптаулары сәтті жаңартылды",
+    "AccountDefaultsResetSuccessfully": "Аккаунт баптаулары сәтті қалпына келтірілді",
+    "Language": "Тіл",
+    "Default": "Әдепкі",
+    "Kazakh": "Қазақ",
+    "Russian": "Орыс",
+    "English": "Ағылшын",
+    "LanguageHint": "Аккаунт үшін негізгі тілді таңдаңыз",
+    "HomePage": "Басты бет",
+    "Dashboard": "Басқару тақтасы",
+    "Customers": "Клиенттер",
+    "Products": "Өнімдер",
+    "Orders": "Тапсырыстар",
+    "About": "Бағдарлама туралы",
+    "Settings": "Баптаулар",
+    "HomePageHint": "Кіргендегі әдепкі бет",
+    "DashboardStatistics": "Статистика тақтасы",
+    "DashboardStatisticsHint": "Тақтада демо-графиктерді көрсету",
+    "DashboardNotifications": "Хабарламалар тақтасы",
+    "DashboardNotificationsHint": "Қолданба хабарламаларын көрсету",
+    "DashboardTodo": "Тапсырмалар тақтасы",
+    "DashboardTodoHint": "Демо-тапсырмалар виджетын көрсету",
+    "DashboardBanner": "Баннер тақтасы",
+    "DashboardBannerHint": "Демо-ақпараттық баннерді көрсету"
+  },
+  "users": {
+    "management": {
+      "Search": "Пайдаланушыны іздеу",
+      "NewUser": "Жаңа пайдаланушы",
+      "Edit": "Өңдеу",
+      "Delete": "Жою",
+      "EditUser": "«{{name}}» пайдаланушысын өңдеу",
+      "Title": "Лауазым",
+      "UserName": "Пайдаланушы аты",
+      "FullName": "Толық аты",
+      "Email": "Email",
+      "Roles": "Рөлдер",
+      "PhoneNumber": "Телефон"
+    },
+    "editor": {
+      "JobTitle": "Лауазым",
+      "UserName": "Пайдаланушы аты",
+      "UserNameRequired": "Міндетті өріс (2-200 таңба)",
+      "Password": "Құпия сөз",
+      "PasswordHint": "Атыңызды өзгерту үшін қажет",
+      "CurrentPasswordRequired": "Ағымдағы құпия сөз қажет",
+      "Email": "Email",
+      "SendVerificationEmail": "Растау хатын жіберу",
+      "EmailRequired": "Міндетті өріс (200 таңбаға дейін)",
+      "InvalidEmail": "Жарамсыз email",
+      "ChangePassword": "Құпия сөзді өзгерту",
+      "CurrentPassword": "Ағымдағы құпия сөз",
+      "NewPassword": "Жаңа құпия сөз",
+      "NewPasswordRequired": "Міндетті өріс",
+      "NewPasswordRules": "Құпия сөзде болуы керек: бас әріп, кіші әріп, сан және арнайы таңба",
+      "ConfirmPassword": "Құпия сөзді растау",
+      "ConfirmationPasswordRequired": "Растау қажет",
+      "PasswordMismatch": "Құпия сөздер сәйкес келмейді",
+      "Roles": "Рөлдер",
+      "FullName": "Толық аты",
+      "RoleRequired": "Рөлді таңдау міндетті",
+      "PhoneNumber": "Телефон",
+      "Enabled": "Белсенді",
+      "Unblock": "Блоктан шығару",
+      "Close": "Жабу",
+      "Edit": "Өңдеу",
+      "Cancel": "Бас тарту",
+      "Save": "Сақтау",
+      "Saving": "Сақтауда..."
+    }
+  },
+  "roles": {
+    "management": {
+      "Search": "Рөлді іздеу...",
+      "NewRole": "Жаңа рөл",
+      "Edit": "Өңдеу",
+      "Details": "Толығырақ",
+      "Delete": "Жою",
+      "RoleDetails": "«{{name}}» рөлінің толық ақпараты",
+      "EditRole": "«{{name}}» рөлін өңдеу",
+      "Name": "Атауы",
+      "Description": "Сипаттама",
+      "Users": "Пайдаланушылар"
+    },
+    "editor": {
+      "Name": "Атауы:",
+      "Description": "Сипаттама:",
+      "RoleNameRequired": "Міндетті өріс (2-200 таңба)",
+      "SelectAll": "Барлығын таңдау",
+      "SelectNone": "Таңдаудан бас тарту",
+      "Close": "Жабу",
+      "Cancel": "Бас тарту",
+      "Save": "Сақтау",
+      "Saving": "Сақтауда..."
+    }
+  },
+  "notifications": {
+    "Delete": "Хабарламаны жою",
+    "Pin": "Бекіту",
+    "Date": "Күні",
+    "Notification": "Хабарлама"
+  },
+  "statisticsDemo": {
+    "BarChart": "Бағанды диаграмма",
+    "PieChart": "Төтенше диаграмма",
+    "DoughnutChart": "Шығыр диаграммасы",
+    "PolarAreaChart": "Полярлық аудан диаграммасы",
+    "RadarChart": "Радар диаграммасы",
+    "LineChart": "Сызықтық график",
+    "ManualRefresh": "Қолмен жаңарту!",
+    "YouClickedOnMenu": "Сіз мәзірді бастыңыз",
+    "DoSeriousConfiguration": "Баптау үшін мән енгізіңіз...",
+    "Demo": "Демо",
+    "ConfigureChart": "Графикті баптау",
+    "Simulating": "Симуляциялау...",
+    "SettingsConfiguredTo": "Баптаулар «{{value}}» мәніне өзгертілді",
+    "OperationCancelled": "Операция пайдаланушымен тоқтатылды"
+  },
+  "todoDemo": {
+    "management": {
+      "Search": "Тапсырманы іздеу...",
+      "HideCompleted": "Орындалғандарды жасыру",
+      "AddTask": "Тапсырма қосу",
+      "Delete": "Жою",
+      "Important": "Мәнді деп белгілеу",
+      "Task": "Тапсырма",
+      "Description": "Сипаттама"
+    },
+    "editor": {
+      "NewTask": "Жаңа тапсырма",
+      "Name": "Атауы",
+      "TaskNameRequired": "Атауы міндетті",
+      "Description": "Сипаттама",
+      "Important": "Мәнді тапсырма",
+      "AddTask": "Қосу"
+    }
+  },
+  "demo": {
+    "SamplePage": "Үлгі бет"
+  },
+  "commands": {
+    "Ok": "ЖАРАЙДЫ",
+    "Cancel": "БАС ТАРТУ",
+    "Default": "ӘДЕПКІ",
+    "Edit": "ӨҢДЕУ",
+    "Save": "САҚТАУ",
+    "Delete": "ЖОЮ",
+    "Reset": "ҚАЛПЫНА КЕЛТІРУ",
+    "Reload": "ҚАЙТА ЖҮКТЕУ",
+    "Refresh": "ЖАҢАРТУ",
+    "Reorder": "ТӘРТІПТІ ӨЗГЕРТУ",
+    "Remove": "АЛЫП ТАСТАУ",
+    "Details": "ТОЛЫҚ АҚПАРАТ"
+  }
+}

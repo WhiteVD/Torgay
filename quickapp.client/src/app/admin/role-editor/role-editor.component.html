@@ -1,0 +1,37 @@
+<form #form="ngForm" [formGroup]="roleForm" novalidate (ngSubmit)="save()" class="flex-col gap-1em" autocomplete="off">
+
+  <div class="flex-row flex-col-ltmd gap-col-1em">
+    <mat-form-field class="flex-1">
+      <mat-label>{{'roles.editor.Name' | translate}}</mat-label>
+      <input matInput formControlName="name" [readonly]="!canManageRoles" />
+      @if (name.hasError('required')) {
+        <mat-error>{{'roles.editor.RoleNameRequired' | translate}}</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="flex-1">
+      <mat-label>{{'roles.editor.Description' | translate}}</mat-label>
+      <input matInput formControlName="description" [readonly]="!canManageRoles" />
+    </mat-form-field>
+  </div>
+
+  @for (permissionGroup of allPermissions() | groupBy: 'groupName'; track permissionGroup) {
+    <mat-expansion-panel [expanded]="isNewRole">
+      <mat-expansion-panel-header color="primary">
+        <mat-panel-title>
+          {{permissionGroup.key}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      @for (permission of permissionGroup.value; track permission) {
+        <mat-slide-toggle [disabled]="!canManageRoles"
+          matTooltip="{{permission['description']}}"
+          (click)="$event.stopPropagation()"
+          (change)="$event ? selectedPermissions.toggle(permission) : null"
+          [checked]="selectedPermissions.isSelected(permission)">
+          {{permission['name']}}
+        </mat-slide-toggle>
+      }
+    </mat-expansion-panel>
+  }
+  <br />
+</form>

@@ -1,0 +1,22 @@
+<form #form="ngForm" [formGroup]="loginForm" (ngSubmit)="login()" novalidate class="app-login-form">
+  <mat-form-field class="app-validate">
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="userName" autocomplete="username" (keydown.enter)="enterKeyDown()">
+    @if (userName.hasError('required')) {
+      <mat-error>User name is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field class="app-validate">
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password" autocomplete="current-password" (keydown.enter)="enterKeyDown()" type="password">
+    @if (password.hasError('required')) {
+      <mat-error>Password is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+
+  <mat-checkbox class="mat-dialog-content--scrollbar-fix" formControlName="rememberMe" (keydown.enter)="enterKeyDown()">
+    Remember me!
+  </mat-checkbox>
+
+</form>

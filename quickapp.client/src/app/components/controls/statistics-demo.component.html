@@ -1,0 +1,59 @@
+<div class="flex-row flex-col-ltlg">
+  <div class="flex-grow60">
+    <div class="chart-container">
+      <canvas baseChart width="600" height="250"
+              [datasets]="chartData"
+              [labels]="chartLabels"
+              [options]="chartOptions"
+              [legend]="true"
+              [type]="chartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)">
+      </canvas>
+    </div>
+  </div>
+  <div class="flex-grow40">
+    <table class="demo-table hide-xs">
+      <thead>
+        <tr>
+          <th></th>
+          @for (label of chartLabels; track label) {
+            <th>{{label}}</th>
+          }
+        </tr>
+      </thead>
+      <tbody>
+        @for (d of chartData; track d) {
+          <tr>
+            <th>{{d && d.label.split(' ').pop()}}</th>
+            @for (label of chartLabels; track label; let j = $index) {
+              <td>{{d && d.data[j]}}</td>
+            }
+          </tr>
+        }
+      </tbody>
+    </table>
+    <div class="flex flex-wrap align-center">
+      <button mat-button (click)="randomize();showMessage('statisticsDemo.ManualRefresh');">{{'commands.Refresh' | translate}}</button>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>insert_chart</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [class.active]="chartType === 'bar'" (click)="changeChartType('bar')">{{'statisticsDemo.BarChart' | translate}}</button>
+        <button mat-menu-item [class.active]="chartType === 'pie'" (click)="changeChartType('pie')">{{'statisticsDemo.PieChart' | translate}}</button>
+        <button mat-menu-item [class.active]="chartType === 'doughnut'" (click)="changeChartType('doughnut')">{{'statisticsDemo.DoughnutChart' | translate}}</button>
+        <button mat-menu-item [class.active]="chartType === 'polarArea'" (click)="changeChartType('polarArea')">{{'statisticsDemo.PolarAreaChart' | translate}}</button>
+        <button mat-menu-item [class.active]="chartType === 'radar'" (click)="changeChartType('radar')">{{'statisticsDemo.RadarChart' | translate}}</button>
+        <hr />
+        <button mat-menu-item [class.active]="chartType === 'line'" (click)="changeChartType('line')">{{'statisticsDemo.LineChart' | translate}}</button>
+      </mat-menu>
+
+      <button mat-icon-button (click)="showMessage('statisticsDemo.YouClickedOnMenu')">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <button mat-icon-button (click)="showDialog('statisticsDemo.DoSeriousConfiguration')">
+        <mat-icon>settings_application</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

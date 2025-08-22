@@ -1,0 +1,30 @@
+// ======================================
+// Author: Ebenezer Monney
+// Copyright (c) 2023 www.ebenmonney.com
+// 
+// ==> Gun4Hire: contact@ebenmonney.com
+// ======================================
+
+import { Environment } from "../app/models/environment.model";
+
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+export const environment: Environment = {
+  production: false,
+  baseUrl: null, // API Server url
+  fallbackBaseUrl: 'https://quickapp-pro.azurewebsites.net', // Fallback API Server for development without local API server
+  googleClientId: null,
+  facebookClientId: null,
+  microsoftClientId: null
+};
+
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.

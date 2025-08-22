@@ -1,0 +1,14 @@
+﻿// ======================================
+// Author: Ebenezer Monney
+// Copyright (c) 2023 www.ebenmonney.com
+// 
+// ==> Gun4Hire: contact@ebenmonney.com
+// ======================================
+
+namespace QuickApp.Core.Extensions
+{
+    public static class StringExtensions
+    {
+        public static string? NullIfWhiteSpace(this string? value) => string.IsNullOrWhiteSpace(value) ? null : value;
+    }
+}

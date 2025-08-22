@@ -1,0 +1,88 @@
+@use 'breakpoints';
+
+.banner-demo-carousel {
+  .carousel-indicators {
+    padding: 5px;
+
+    button {
+      border: none;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.55);
+      padding: 5px;
+      margin: 0 3px !important;
+      transition: .4s ease all;
+      cursor: pointer !important;
+
+      &[disabled] {
+        background: white;
+        width: 20px !important;
+      }
+    }
+
+    @include breakpoints.breakpoint('xs') {
+      display: none !important;
+    }
+  }
+
+  .carousel > button {
+    width: 150px;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    opacity: 0;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+
+    .mat-mdc-button-persistent-ripple {
+      border-radius: 0;
+    }
+
+    .mat-mdc-button-persistent-ripple::before {
+      opacity: 0;
+    }
+
+    .mat-ripple-element {
+      background-color: rgba(255, 64, 129, 0.05);
+    }
+
+    &:hover {
+      opacity: 1;
+      transition: opacity 1s;
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+    &:nth-child(2) {
+      background: linear-gradient(to left, transparent, rgba(0, 0, 0, .5));
+      left: 0 !important;
+    }
+
+    &:nth-child(3) {
+      background: linear-gradient(to right, transparent, rgba(0, 0, 0, .5));
+      right: 0 !important;
+    }
+  }
+
+  .carousel-slide-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-caption {
+    z-index: 10;
+    color: #fff;
+    font-size: 1.1vw;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+
+    @include breakpoints.breakpoint('lt-md') {
+      display: none;
+    }
+  }
+}

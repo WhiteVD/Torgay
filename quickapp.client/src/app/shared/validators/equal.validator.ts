@@ -1,0 +1,17 @@
+// ======================================
+// Author: Ebenezer Monney
+// Copyright (c) 2023 www.ebenmonney.com
+// 
+// ==> Gun4Hire: contact@ebenmonney.com
+// ======================================
+
+import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+
+export function EqualValidator(controlName: string): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const compareControl = control.parent ? control.parent.get(controlName) : null;
+    const areEqual = compareControl && control.value === compareControl.value;
+
+    return areEqual ? null : { notEqual: true };
+  };
+}

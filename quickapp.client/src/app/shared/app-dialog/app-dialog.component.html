@@ -1,0 +1,22 @@
+@if (showTitle) {
+  <h1 mat-dialog-title>{{title}}</h1>
+}
+<div mat-dialog-content>
+
+  @if (!isPrompt) {
+    <p>{{message}}</p>
+  }
+  @else {
+    <mat-form-field style="width: 100%;">
+      <mat-label>{{message}}</mat-label>
+      <input matInput [(ngModel)]="result" />
+    </mat-form-field>
+  }
+
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="ok()" color="primary">{{okLabel}}</button>
+  @if (showCancel) {
+    <button mat-raised-button (click)="cancel()" color="warn">{{cancelLabel}}</button>
+  }
+</div>

@@ -1,0 +1,75 @@
+<app-page-header title="Settings" icon="settings"></app-page-header>
+
+<div [@fadeInOut] class="page-content">
+  <mat-accordion class="accordion-headers-align">
+    <mat-expansion-panel #profile hideToggle="true" [expanded]="openedIndex === 0"
+                         (opened)="navigateToFragment('profile')">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{'settings.tab.Profile' | translate}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{'settings.description.UserProfile' | translate}}
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div [class.hide]="!ready && openedIndex !== 0">
+        <app-user-editor #userProfile></app-user-editor>
+        <mat-action-row>
+          @if (!userProfile.isEditMode) {
+            <button mat-raised-button (click)="userProfile.beginEdit()" color="primary">
+              {{'commands.Edit' | translate}}
+            </button>
+          }
+          @else {
+            <button mat-raised-button (click)="userProfile.save()" color="primary" style="margin-right: 1em;">
+              {{'commands.Save' | translate}}
+            </button>
+            <button mat-raised-button (click)="userProfile.cancel()" color="warn">
+               {{'commands.Cancel' | translate}}
+            </button>
+          }
+        </mat-action-row>
+      </div>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel #preferences hideToggle="true" [expanded]="openedIndex === 1"
+                         (opened)="navigateToFragment('preferences')">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{'settings.tab.Preferences' | translate}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{'settings.description.UserPreferences' | translate}}
+          <mat-icon>tune</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div [class.hide]="!ready && openedIndex !== 1">
+        <app-user-preferences></app-user-preferences>
+        <mat-action-row>
+          <button mat-button (click)="userPreferences().reset()"
+                  matTooltip="{{'preferences.ResetPreferencesHint' | translate}}"
+                  color="warn" style="margin-right: 1em;">
+            {{'commands.Reset' | translate}}
+          </button>
+          <button mat-raised-button (click)="userPreferences().save()"
+                  matTooltip="{{'preferences.SavePreferencesHint' | translate}}"
+                  color="primary" style="margin-right: 1em;">
+            {{'commands.Save' | translate}}
+          </button>
+          <button mat-raised-button (click)="userPreferences().reload()"
+                  matTooltip="{{'preferences.ReloadPreferencesHint' | translate}}"
+                  color="accent">
+            {{'commands.Reload' | translate}}
+          </button>
+        </mat-action-row>
+      </div>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+</div>
