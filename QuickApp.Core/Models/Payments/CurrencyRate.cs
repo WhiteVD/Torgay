@@ -17,7 +17,8 @@ namespace QuickApp.Core.Models.Payments {
         [Required]
         [Comment("Валюта")]
         public required Guid Currency_id { get; set; }
-        public Currency currency { get; set; }
+        [NotMapped]
+        public virtual Currency currency { get; set; }
 
         [Required]
         [Comment("Курс")]

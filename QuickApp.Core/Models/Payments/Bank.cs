@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 
 namespace QuickApp.Core.Models.Payments {
     [Table("Payment_C_Banks")]
@@ -24,7 +23,7 @@ namespace QuickApp.Core.Models.Payments {
 
         [Comment("Страна")]
         public Guid? Country_id { get; set; }
-        [JsonIgnore]
+        [NotMapped]
         public virtual Country? Country { get; set; }
 
         [Comment("Идентификатор источника")]

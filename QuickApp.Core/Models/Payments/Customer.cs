@@ -11,8 +11,13 @@ namespace QuickApp.Core.Models.Payments {
         [MaxLength(250)]
         public required string Title { get; set; }
 
-        [Comment("ИНН")]
+        [Comment("БИН")]
         [MaxLength(12)]
-        public string INN { get; set; }
+        public required string BIN { get; set; }
+
+        [Comment("Страна")]
+        public Guid? Country_id { get; set; }
+        [NotMapped]
+        public virtual Country? Country { get; set; }
     }
 }

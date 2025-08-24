@@ -30,8 +30,7 @@ namespace QuickApp.Core.Models.Payments {
         [ForeignKey("Payment")]
         [Comment("Идентификатор родительского платежа")]
         public Guid? ParentPayment_id { get; set; }
-
-        [JsonIgnore]
+        [NotMapped]
         public virtual Payment? ParentPayment { get; set; }
 
         [Comment("Прогнозная дата оплаты")]
@@ -45,12 +44,18 @@ namespace QuickApp.Core.Models.Payments {
 
         [Comment("Идентификатор счёта получателя")]
         public Guid? RecipientAccount_id { get; set; }
+        [NotMapped]
+        public virtual CustomerAccount? RecipientAccount { get; set; }
 
         [Comment("Идентификатор счёта отправителя")]
         public Guid? SenderAccountId { get; set; }
+        [NotMapped]
+        public virtual CustomerAccount? SenderAccount { get; set; }
 
         [Comment("Вид платежа")]
         public Guid? PaymentCategory_id { get; set; }
+        [NotMapped]
+        public virtual MovementType? MovementType { get; set; }
 
         [Comment("Ставка НДС")]
         public double? VatRate { get; set; }
@@ -60,6 +65,7 @@ namespace QuickApp.Core.Models.Payments {
 
         [Comment("Идентификатор валюты")]
         public Guid CurrencyId { get; set; }
+        [NotMapped]
         public virtual Currency? Currency { get; set; }
 
         [Comment("Примечание")]
@@ -67,15 +73,23 @@ namespace QuickApp.Core.Models.Payments {
 
         [Comment("КНП")]
         public string? KnpCode { get; set; }
+        [NotMapped]
+        public virtual PPC? PPC { get; set; }
 
         [Comment("КБК")]
         public string? KbkCode { get; set; }
+        [NotMapped]
+        public virtual BCC? BCC { get; set; }
 
         [Comment("Идентификатор договора")]
         public Guid? Contract_id { get; set; }
+        [NotMapped]
+        public virtual Contract? Contract { get; set; }
 
         [Comment("Идентификатор контрагента получателя/отправителя")]
         public Guid? Customer_id { get; set; }
+        [NotMapped]
+        public virtual Customer? Customer { get; set; }
 
         [Comment("Назначение платежа")]
         public string? PurposeOfPayment { get; set; }

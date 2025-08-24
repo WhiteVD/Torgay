@@ -18,14 +18,18 @@ namespace QuickApp.Core.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
+        [Comment("Кем создано")]
         [MaxLength(40)]
         public string? CreatedBy { get; set; }
 
+        [Comment("Кем изменено")]
         [MaxLength(40)]
         public string? UpdatedBy { get; set; }
 
+        [Comment("Когда изменено")]
         public DateTime UpdatedDate { get; set; }
 
+        [Comment("Когда создано")]
         public DateTime CreatedDate { get; set; }
     }
 }

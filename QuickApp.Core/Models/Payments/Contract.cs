@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using QuickApp.Core.Models.Access;
 using QuickApp.Core.Models.Enums;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -29,6 +30,7 @@ namespace QuickApp.Core.Models.Payments {
 
         [Comment("Тип договора")]
         public Guid ContractType_id { get; set; }
+        [NotMapped]
         public virtual ContractType? ContractType { get; set; }
 
         [Comment("Статус")]
@@ -36,12 +38,17 @@ namespace QuickApp.Core.Models.Payments {
 
         [Comment("Идентификатор клиента")]
         public Guid? Client_id { get; set; }
+        [NotMapped]
+        public virtual Client Client { get; set; }
 
         [Comment("Идентификатор организации")]
         public Guid? OrganizationId { get; set; }
+        [NotMapped]
+        public virtual Organization Organization { get; set; }
 
         [Comment("Идентификатор контрагента")]
         public Guid Customer_id { get; set; }
+        [NotMapped]
         public virtual Customer? customer { get; set; }
 
         [MaxLength(500)]
