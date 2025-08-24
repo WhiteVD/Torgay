@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuickApp.Core.Models.Payments {
     [Table("Payment_C_ContractTypes")]
+    [Comment("Тип договора")]
     public class ContractType {
         [Key]
         [Comment("Идентификатор")]

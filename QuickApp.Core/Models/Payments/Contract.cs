@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuickApp.Core.Models.Payments {
     [Table("Payment_C_Contracts")]
+    [Comment("Договора")]
     public class Contract : BaseEntity {
         [Comment("Идентификатор с 1С")]
         public Guid? SourceId { get; set; }

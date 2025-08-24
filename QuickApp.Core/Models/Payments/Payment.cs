@@ -5,7 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace QuickApp.Core.Models.Payments {
-    [Table("Payment_C_Payments")]
+    [Table("Payment_D_Payments")]
+    [Comment("Платежи")]
     public class Payment : ClientEntry {
         [Required]
         [Comment("Номер")]
@@ -60,8 +61,10 @@ namespace QuickApp.Core.Models.Payments {
         [Comment("Ставка НДС")]
         public double? VatRate { get; set; }
 
-        [Comment("Тип платежа")]
-        public PaymentType Type { get; set; }
+        //[Comment("Тип платежа")]
+        //public Guid Type_id { get; set; }
+        //[NotMapped]
+        //public virtual MovementType MovementType { get; set; }
 
         [Comment("Идентификатор валюты")]
         public Guid CurrencyId { get; set; }

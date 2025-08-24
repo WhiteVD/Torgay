@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuickApp.Core.Models.Payments {
     [Table("Payment_C_BCC")]
+    [Comment("Код бюджетной класификации")]
     public class BCC {
         [Key]
         [Comment("Идентификатор")]

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuickApp.Core.Models.Payments {
     [Table("Payment_C_MovementTypes")]
+    [Comment("Вид движения")]
     public class MovementType {
         [Key]
         [Comment("Идентификатор")]

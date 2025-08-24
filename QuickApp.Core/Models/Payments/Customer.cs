@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuickApp.Core.Models.Payments {
     [Table("Payment_C_Customers")]
-
+    [Comment("Контрагенты")]
     public class Customer : ClientEntry {
         [Required]
         [Comment("Наименование")]

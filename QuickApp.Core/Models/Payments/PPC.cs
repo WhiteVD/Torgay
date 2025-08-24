@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuickApp.Core.Models.Payments {
     [Table("Payment_C_PPC")]
+    [Comment("Код назначения платежа")]
     public class PPC {
         [Key]
         [Comment("Идентификатор")]

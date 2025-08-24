@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuickApp.Core.Models.Payments {
     [Table("Payment_C_Currency")]
+    [Comment("Валюты")]
     public class Currency {
         [Key]
         [Comment("Идентификатор")]

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuickApp.Core.Models.Payments {
     [Table("Payment_C_AccountType")]
+    [Comment("Тип счёта")]
     public class AccountType {
         [Key]
         [Comment("Идентификатор")]

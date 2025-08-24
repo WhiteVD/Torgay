@@ -43,10 +43,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\quickapp.client\quickapp.client.esproj">
+    <ProjectReference Include="..\quickapp.client\torgay.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\QuickApp.Core\QuickApp.Core.csproj" />
+    <ProjectReference Include="..\QuickApp.Core\Torgay.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
