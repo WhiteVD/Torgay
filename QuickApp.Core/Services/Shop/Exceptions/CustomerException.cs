@@ -5,7 +5,7 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-namespace QuickApp.Core.Services.Shop
+namespace Torgay.Core.Services.Shop
 {
     /// <summary>
     /// Represents errors that occur with customer related operations.

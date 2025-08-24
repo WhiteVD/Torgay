@@ -7,7 +7,7 @@
 
 using System.Text.Encodings.Web;
 
-namespace QuickApp.Server.Services.Email
+namespace Torgay.Server.Services.Email
 {
     public static class EmailTemplates
     {

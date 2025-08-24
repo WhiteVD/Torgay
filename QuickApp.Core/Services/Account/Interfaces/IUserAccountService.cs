@@ -5,9 +5,9 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-using QuickApp.Core.Models.Account;
+using Torgay.Core.Models.Account;
 
-namespace QuickApp.Core.Services.Account
+namespace Torgay.Core.Services.Account
 {
     public interface IUserAccountService
     {

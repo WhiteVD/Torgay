@@ -7,11 +7,11 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using QuickApp.Server.Configuration;
-using QuickApp.Server.OIDC;
+using Torgay.Server.Configuration;
+using Torgay.Server.OIDC;
 using System.Text.Json;
 
-namespace QuickApp.Server.Controllers
+namespace Torgay.Server.Controllers
 {
     [Route("oauth/[controller]")]
     public class TwitterController : ControllerBase

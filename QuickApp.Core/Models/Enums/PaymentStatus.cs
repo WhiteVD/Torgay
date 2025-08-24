@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace QuickApp.Core.Models.Enums {
+namespace Torgay.Core.Models.Enums {
     public enum PaymentStatus {
         [Description("Черновик")]
         CREATED,

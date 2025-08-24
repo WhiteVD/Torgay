@@ -5,7 +5,7 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-namespace QuickApp.Server.ViewModels.Shop
+namespace Torgay.Server.ViewModels.Shop
 {
     public class OrderVM
     {

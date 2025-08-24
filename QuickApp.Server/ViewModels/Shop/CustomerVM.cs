@@ -7,7 +7,7 @@
 
 using FluentValidation;
 
-namespace QuickApp.Server.ViewModels.Shop
+namespace Torgay.Server.ViewModels.Shop
 {
     public class CustomerVM
     {

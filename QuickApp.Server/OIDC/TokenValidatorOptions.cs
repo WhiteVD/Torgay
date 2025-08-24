@@ -5,9 +5,9 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-using QuickApp.Server.OIDC.TokenValidators;
+using Torgay.Server.OIDC.TokenValidators;
 
-namespace QuickApp.Server.OIDC
+namespace Torgay.Server.OIDC
 {
     public class TokenValidatorOptions
     {

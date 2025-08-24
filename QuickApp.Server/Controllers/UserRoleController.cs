@@ -9,14 +9,14 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using QuickApp.Core.Models.Account;
-using QuickApp.Core.Services.Account;
-using QuickApp.Server.Authorization;
-using QuickApp.Server.Configuration;
-using QuickApp.Server.ViewModels.Account;
+using Torgay.Core.Models.Account;
+using Torgay.Core.Services.Account;
+using Torgay.Server.Authorization;
+using Torgay.Server.Configuration;
+using Torgay.Server.ViewModels.Account;
 using System.Data;
 
-namespace QuickApp.Server.Controllers
+namespace Torgay.Server.Controllers
 {
     [Route("api/account")]
     [Authorize]

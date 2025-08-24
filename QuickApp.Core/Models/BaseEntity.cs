@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace QuickApp.Core.Models
+namespace Torgay.Core.Models
 {
     public class BaseEntity : IAuditableEntity
     {

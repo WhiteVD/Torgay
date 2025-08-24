@@ -10,15 +10,15 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using QuickApp.Core.Models.Account;
-using QuickApp.Core.Services.Account;
-using QuickApp.Server.Authorization;
-using QuickApp.Server.Configuration;
-using QuickApp.Server.Services;
-using QuickApp.Server.Services.Email;
-using QuickApp.Server.ViewModels.Account;
+using Torgay.Core.Models.Account;
+using Torgay.Core.Services.Account;
+using Torgay.Server.Authorization;
+using Torgay.Server.Configuration;
+using Torgay.Server.Services;
+using Torgay.Server.Services.Email;
+using Torgay.Server.ViewModels.Account;
 
-namespace QuickApp.Server.Controllers
+namespace Torgay.Server.Controllers
 {
     [Route("api/account")]
     [Authorize]

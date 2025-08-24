@@ -1,17 +1,10 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using QuickApp.Core.Infrastructure;
-using QuickApp.Server.Services;
+using Torgay.Core.Infrastructure;
+using Torgay.Server.Services;
 using System.Reflection;
 
-namespace QuickApp.Server.Configuration
+namespace Torgay.Server.Configuration
 {
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
     {

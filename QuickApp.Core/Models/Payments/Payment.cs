@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuickApp.Core.Models.Enums;
+using Torgay.Core.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace QuickApp.Core.Models.Payments {
+namespace Torgay.Core.Models.Payments {
     [Table("Payment_D_Payments")]
     [Comment("Платежи")]
     public class Payment : ClientEntry {

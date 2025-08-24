@@ -1,10 +1,3 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -13,19 +6,19 @@ using Microsoft.IdentityModel.Logging;
 using Microsoft.OpenApi.Models;
 using OpenIddict.Validation.AspNetCore;
 using Quartz;
-using QuickApp.Core.Infrastructure;
-using QuickApp.Core.Models.Account;
-using QuickApp.Core.Services;
-using QuickApp.Core.Services.Account;
-using QuickApp.Core.Services.Payments;
-using QuickApp.Core.Services.Payments.Interfaces;
-using QuickApp.Server.Authorization;
-using QuickApp.Server.Authorization.Requirements;
-using QuickApp.Server.Configuration;
-using QuickApp.Server.OIDC;
-using QuickApp.Server.OIDC.TokenValidators;
-using QuickApp.Server.Services;
-using QuickApp.Server.Services.Email;
+using Torgay.Core.Infrastructure;
+using Torgay.Core.Models.Account;
+using Torgay.Core.Services;
+using Torgay.Core.Services.Account;
+using Torgay.Core.Services.Payments;
+using Torgay.Core.Services.Payments.Interfaces;
+using Torgay.Server.Authorization;
+using Torgay.Server.Authorization.Requirements;
+using Torgay.Server.Configuration;
+using Torgay.Server.OIDC;
+using Torgay.Server.OIDC.TokenValidators;
+using Torgay.Server.Services;
+using Torgay.Server.Services.Email;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using static OpenIddict.Abstractions.OpenIddictConstants;

@@ -7,7 +7,7 @@
 
 using System.Security.Claims;
 
-namespace QuickApp.Server.OIDC
+namespace Torgay.Server.OIDC
 {
     public class TokenValidationResult
     {

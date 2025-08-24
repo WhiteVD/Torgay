@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace QuickApp.Core.DTO {
+namespace Torgay.Core.DTO {
     public class ClientListQueryParams {
         public Guid Client_id { get; set; }
         public Guid Organization_id { get; set; }

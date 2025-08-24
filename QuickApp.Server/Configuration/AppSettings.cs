@@ -1,11 +1,4 @@
-﻿// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
-namespace QuickApp.Server.Configuration
+﻿namespace Torgay.Server.Configuration
 {
     public class AppSettings
     {

@@ -5,7 +5,7 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-namespace QuickApp.Core.Services.Account
+namespace Torgay.Core.Services.Account
 {
     /// <summary>
     /// Represents errors that occur with user role related operations.

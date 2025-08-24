@@ -7,11 +7,11 @@
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using QuickApp.Core.Models;
-using QuickApp.Core.Models.Account;
-using QuickApp.Core.Services.Account;
+using Torgay.Core.Models;
+using Torgay.Core.Models.Account;
+using Torgay.Core.Services.Account;
 
-namespace QuickApp.Core.Infrastructure
+namespace Torgay.Core.Infrastructure
 {
     public class DatabaseSeeder(ApplicationDbContext dbContext, ILogger<DatabaseSeeder> logger,
         IUserAccountService userAccountService, IUserRoleService userRoleService) : IDatabaseSeeder

@@ -5,7 +5,7 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-namespace QuickApp.Core.Extensions
+namespace Torgay.Core.Extensions
 {
     public static class ArrayExtensions
     {

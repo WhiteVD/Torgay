@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuickApp.Core.Infrastructure;
-using QuickApp.Core.Models.Payments;
-using QuickApp.Core.Services.Payments.Interfaces;
+using Torgay.Core.Infrastructure;
+using Torgay.Core.Models.Payments;
+using Torgay.Core.Services.Payments.Interfaces;
 
-namespace QuickApp.Core.Services.Payments {
+namespace Torgay.Core.Services.Payments {
     public class MovementTypeService(ApplicationDbContext dbContext) : IMovementTypeService {
         /// <summary>
         /// Gets the specified identifier.

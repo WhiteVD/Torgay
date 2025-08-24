@@ -5,7 +5,7 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-namespace QuickApp.Core.Infrastructure
+namespace Torgay.Core.Infrastructure
 {
     public interface IDatabaseSeeder
     {

@@ -6,9 +6,9 @@
 // ======================================
 
 using Microsoft.AspNetCore.Authorization;
-using QuickApp.Core.Services.Account;
+using Torgay.Core.Services.Account;
 
-namespace QuickApp.Server.Authorization.Requirements
+namespace Torgay.Server.Authorization.Requirements
 {
     public class ViewRoleAuthorizationRequirement : IAuthorizationRequirement
     {

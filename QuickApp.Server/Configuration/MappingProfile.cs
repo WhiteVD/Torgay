@@ -1,18 +1,10 @@
-﻿// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
-using QuickApp.Core.Models.Account;
-using QuickApp.Core.Services.Account;
-using QuickApp.Server.ViewModels.Account;
-using QuickApp.Server.ViewModels.Shop;
+using Torgay.Core.Models.Account;
+using Torgay.Core.Services.Account;
+using Torgay.Server.ViewModels.Account;
 
-namespace QuickApp.Server.Configuration
+namespace Torgay.Server.Configuration
 {
     public class MappingProfile : Profile
     {

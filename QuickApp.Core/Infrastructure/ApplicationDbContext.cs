@@ -7,13 +7,13 @@
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using QuickApp.Core.Models;
-using QuickApp.Core.Models.Access;
-using QuickApp.Core.Models.Account;
-using QuickApp.Core.Models.Payments;
-using QuickApp.Core.Services.Account;
+using Torgay.Core.Models;
+using Torgay.Core.Models.Access;
+using Torgay.Core.Models.Account;
+using Torgay.Core.Models.Payments;
+using Torgay.Core.Services.Account;
 
-namespace QuickApp.Core.Infrastructure
+namespace Torgay.Core.Infrastructure
 {
     public class ApplicationDbContext(DbContextOptions options, IUserIdAccessor userIdAccessor) :
         IdentityDbContext<ApplicationUser, ApplicationRole, string>(options)

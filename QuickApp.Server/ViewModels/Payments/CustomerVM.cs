@@ -1,4 +1,4 @@
-﻿namespace QuickApp.Server.ViewModels.Payments {
+﻿namespace Torgay.Server.ViewModels.Payments {
     public class CustomerVM {
         public Guid Id { get; set; }
         public string Title { get; set; }

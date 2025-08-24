@@ -5,7 +5,7 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-namespace QuickApp.Core.Services
+namespace Torgay.Core.Services
 {
     public interface IEmailSender
     {

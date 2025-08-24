@@ -1,6 +1,6 @@
-﻿using QuickApp.Core.Models.Payments;
+﻿using Torgay.Core.Models.Payments;
 
-namespace QuickApp.Core.Services.Payments.Interfaces {
+namespace Torgay.Core.Services.Payments.Interfaces {
     public interface ICustomerAccountService {
         void Add(CustomerAccount customerAccount);
         void Delete(Guid id);

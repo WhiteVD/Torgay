@@ -7,11 +7,11 @@
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using QuickApp.Core.Infrastructure;
-using QuickApp.Core.Models.Account;
+using Torgay.Core.Infrastructure;
+using Torgay.Core.Models.Account;
 using System.Security.Claims;
 
-namespace QuickApp.Core.Services.Account
+namespace Torgay.Core.Services.Account
 {
     public class UserRoleService : IUserRoleService
     {

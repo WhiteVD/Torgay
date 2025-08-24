@@ -6,9 +6,9 @@
 // ======================================
 
 using Microsoft.Extensions.Options;
-using QuickApp.Server.Configuration;
+using Torgay.Server.Configuration;
 
-namespace QuickApp.Server.OIDC.TokenValidators
+namespace Torgay.Server.OIDC.TokenValidators
 {
     public class FacebookTokenValidator : TokenValidator
     {

@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace QuickApp.Core.Models.Access {
+namespace Torgay.Core.Models.Access {
     [Table("Global_C_Clients")]
     public class Client : BaseEntity {
         [Required]

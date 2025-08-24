@@ -1,25 +1,18 @@
-﻿// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using OpenIddict.Abstractions;
 using OpenIddict.Server.AspNetCore;
-using QuickApp.Core.Models.Account;
-using QuickApp.Core.Services.Account;
-using QuickApp.Server.OIDC;
-using QuickApp.Server.OIDC.TokenValidators;
+using Torgay.Core.Models.Account;
+using Torgay.Core.Services.Account;
+using Torgay.Server.OIDC;
+using Torgay.Server.OIDC.TokenValidators;
 using System.Security.Claims;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
-namespace QuickApp.Server.Controllers
+namespace Torgay.Server.Controllers
 {
     public class AuthorizationController : Controller
     {

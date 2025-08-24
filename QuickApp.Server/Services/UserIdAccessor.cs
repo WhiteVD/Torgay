@@ -5,11 +5,11 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-using QuickApp.Core.Services.Account;
+using Torgay.Core.Services.Account;
 using System.Security.Claims;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
-namespace QuickApp.Server.Services
+namespace Torgay.Server.Services
 {
     public class UserIdAccessor(IHttpContextAccessor httpContextAccessor) : IUserIdAccessor
     {

@@ -7,7 +7,7 @@
 
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace QuickApp.Server.Attributes
+namespace Torgay.Server.Attributes
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class SanitizeModelAttribute : ActionFilterAttribute

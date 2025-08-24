@@ -1,4 +1,4 @@
-﻿namespace QuickApp.Core.DTO {
+﻿namespace Torgay.Core.DTO {
     public class ListResponse {
         public int TotalItems { get; set; }
         public int TotalPages { get; set; }

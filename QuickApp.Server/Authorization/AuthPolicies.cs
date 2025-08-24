@@ -5,7 +5,7 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-namespace QuickApp.Server.Authorization
+namespace Torgay.Server.Authorization
 {
     public static class AuthPolicies
     {

@@ -8,7 +8,7 @@
 using OpenIddict.Abstractions;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
-namespace QuickApp.Server.OIDC
+namespace Torgay.Server.OIDC
 {
     public static class OidcServerManager
     {

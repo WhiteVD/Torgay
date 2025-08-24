@@ -10,7 +10,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace QuickApp.Server.OIDC
+namespace Torgay.Server.OIDC
 {
     /// <summary>
     /// A helper class to generate tokens for OAuth1 requests.

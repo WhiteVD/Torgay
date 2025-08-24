@@ -7,7 +7,7 @@
 
 using Microsoft.AspNetCore.Identity;
 
-namespace QuickApp.Core.Models.Account
+namespace Torgay.Core.Models.Account
 {
     public class ApplicationUser : IdentityUser, IAuditableEntity
     {

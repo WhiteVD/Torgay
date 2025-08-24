@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using QuickApp.Core.Services.Payments.Interfaces;
-using QuickApp.Server.ViewModels.Payments;
+using Torgay.Core.Services.Payments.Interfaces;
+using Torgay.Server.ViewModels.Payments;
 
-namespace QuickApp.Server.Controllers {
+namespace Torgay.Server.Controllers {
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]

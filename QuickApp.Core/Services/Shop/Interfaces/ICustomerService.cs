@@ -6,7 +6,7 @@
 // ======================================
 
 
-namespace QuickApp.Core.Services.Shop
+namespace Torgay.Core.Services.Shop
 {
     public interface ICustomerService
     {

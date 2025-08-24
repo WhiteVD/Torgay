@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuickApp.Core.Models.Access;
-using QuickApp.Core.Models.Enums;
+using Torgay.Core.Models.Access;
+using Torgay.Core.Models.Enums;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace QuickApp.Core.Models.Payments {
+namespace Torgay.Core.Models.Payments {
     [Table("Payment_C_Contracts")]
     [Comment("Договора")]
     public class Contract : BaseEntity {

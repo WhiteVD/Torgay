@@ -7,15 +7,15 @@
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-using QuickApp.Core.Models.Account;
-using QuickApp.Core.Services.Account;
-using QuickApp.Server.Configuration;
-using QuickApp.Server.Services;
-using QuickApp.Server.Services.Email;
+using Torgay.Core.Models.Account;
+using Torgay.Core.Services.Account;
+using Torgay.Server.Configuration;
+using Torgay.Server.Services;
+using Torgay.Server.Services.Email;
 using System.Security.Claims;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
-namespace QuickApp.Server.OIDC
+namespace Torgay.Server.OIDC
 {
     public class OidcUserManager
     {

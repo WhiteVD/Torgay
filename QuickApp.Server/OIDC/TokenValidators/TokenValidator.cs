@@ -10,7 +10,7 @@ using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 
-namespace QuickApp.Server.OIDC.TokenValidators
+namespace Torgay.Server.OIDC.TokenValidators
 {
     public abstract class TokenValidator
     {

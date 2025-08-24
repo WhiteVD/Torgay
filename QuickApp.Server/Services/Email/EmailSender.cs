@@ -8,10 +8,10 @@
 using MailKit.Net.Smtp;
 using Microsoft.Extensions.Options;
 using MimeKit;
-using QuickApp.Core.Services;
-using QuickApp.Server.Configuration;
+using Torgay.Core.Services;
+using Torgay.Server.Configuration;
 
-namespace QuickApp.Server.Services.Email
+namespace Torgay.Server.Services.Email
 {
     public class EmailSender(IOptions<AppSettings> config, ILogger<EmailSender> logger) : IEmailSender
     {

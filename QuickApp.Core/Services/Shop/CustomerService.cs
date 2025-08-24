@@ -6,9 +6,9 @@
 // ======================================
 
 using Microsoft.EntityFrameworkCore;
-using QuickApp.Core.Infrastructure;
+using Torgay.Core.Infrastructure;
 
-namespace QuickApp.Core.Services.Shop
+namespace Torgay.Core.Services.Shop
 {
     public class CustomerService(ApplicationDbContext dbContext) : ICustomerService
     {

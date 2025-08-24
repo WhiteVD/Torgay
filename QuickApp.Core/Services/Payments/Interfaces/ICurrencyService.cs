@@ -1,8 +1,8 @@
-﻿using QuickApp.Core.DTO;
-using QuickApp.Core.Models.Payments;
-using QuickApp.Server.DTO;
+﻿using Torgay.Core.DTO;
+using Torgay.Core.Models.Payments;
+using Torgay.Server.DTO;
 
-namespace QuickApp.Core.Services.Payments.Interfaces {
+namespace Torgay.Core.Services.Payments.Interfaces {
     public interface ICurrencyService {
         Task<Currency?> Get(Guid id);
         Task<ListResponse> GetList(ListQueryParams queryParams);

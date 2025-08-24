@@ -5,11 +5,11 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-using QuickApp.Core.Extensions;
-using QuickApp.Server.Attributes;
+using Torgay.Core.Extensions;
+using Torgay.Server.Attributes;
 using System.ComponentModel.DataAnnotations;
 
-namespace QuickApp.Server.ViewModels.Account
+namespace Torgay.Server.ViewModels.Account
 {
     public class UserVM : UserBaseVM
     {

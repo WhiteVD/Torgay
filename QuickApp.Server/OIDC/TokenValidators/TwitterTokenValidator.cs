@@ -6,11 +6,11 @@
 // ======================================
 
 using Microsoft.Extensions.Options;
-using QuickApp.Server.Configuration;
+using Torgay.Server.Configuration;
 using System.Security.Claims;
 using System.Text.Json;
 
-namespace QuickApp.Server.OIDC.TokenValidators
+namespace Torgay.Server.OIDC.TokenValidators
 {
     public class TwitterTokenValidator : TokenValidator
     {

@@ -6,10 +6,10 @@
 // ======================================
 
 using Microsoft.AspNetCore.Authorization;
-using QuickApp.Core.Services.Account;
+using Torgay.Core.Services.Account;
 using System.Security.Claims;
 
-namespace QuickApp.Server.Authorization.Requirements
+namespace Torgay.Server.Authorization.Requirements
 {
     public class AssignRolesAuthorizationRequirement : IAuthorizationRequirement
     {

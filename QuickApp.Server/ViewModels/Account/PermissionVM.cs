@@ -5,10 +5,10 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-using QuickApp.Core.Models.Account;
+using Torgay.Core.Models.Account;
 using System.Diagnostics.CodeAnalysis;
 
-namespace QuickApp.Server.ViewModels.Account
+namespace Torgay.Server.ViewModels.Account
 {
     public class PermissionVM
     {

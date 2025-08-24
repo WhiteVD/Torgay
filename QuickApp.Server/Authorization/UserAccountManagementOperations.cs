@@ -5,9 +5,9 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-using QuickApp.Server.Authorization.Requirements;
+using Torgay.Server.Authorization.Requirements;
 
-namespace QuickApp.Server.Authorization
+namespace Torgay.Server.Authorization
 {
     /// <summary>
     /// Operation Policy to allow adding, viewing, updating and deleting general or specific user records.

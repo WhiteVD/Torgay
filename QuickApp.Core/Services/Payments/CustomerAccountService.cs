@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuickApp.Core.Infrastructure;
-using QuickApp.Core.Models.Access;
-using QuickApp.Core.Models.Payments;
-using QuickApp.Core.Services.Payments.Interfaces;
+using Torgay.Core.Infrastructure;
+using Torgay.Core.Models.Access;
+using Torgay.Core.Models.Payments;
+using Torgay.Core.Services.Payments.Interfaces;
 
-namespace QuickApp.Core.Services.Payments {
+namespace Torgay.Core.Services.Payments {
     public class CustomerAccountService(ApplicationDbContext dbContext) : ICustomerAccountService {
         /// <summary>
         /// Gets the specified identifier.

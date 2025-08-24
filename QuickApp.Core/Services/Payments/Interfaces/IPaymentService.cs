@@ -1,7 +1,7 @@
-﻿using QuickApp.Core.Models.Access;
-using QuickApp.Core.Models.Payments;
+﻿using Torgay.Core.Models.Access;
+using Torgay.Core.Models.Payments;
 
-namespace QuickApp.Core.Services.Payments.Interfaces {
+namespace Torgay.Core.Services.Payments.Interfaces {
     public interface IPaymentService {
         void Add(Payment payment);
         void Delete(Guid id);

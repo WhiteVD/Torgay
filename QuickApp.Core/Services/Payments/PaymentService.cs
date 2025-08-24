@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuickApp.Core.Infrastructure;
-using QuickApp.Core.Models.Access;
-using QuickApp.Core.Models.Payments;
-using QuickApp.Core.Services.Payments.Interfaces;
+using Torgay.Core.Infrastructure;
+using Torgay.Core.Models.Access;
+using Torgay.Core.Models.Payments;
+using Torgay.Core.Services.Payments.Interfaces;
 
-namespace QuickApp.Core.Services.Payments {
+namespace Torgay.Core.Services.Payments {
     public class PaymentService(ApplicationDbContext dbContext) : IPaymentService {
         /// <summary>
         /// Gets the specified identifier.
@@ -65,7 +65,7 @@ namespace QuickApp.Core.Services.Payments {
                     b.TotalAmount = payment.TotalAmount;
                     b.TotalAmountInCurrency = payment.TotalAmountInCurrency;
                     b.TransferPair_id = payment.TransferPair_id;
-                    b.Type = payment.Type;
+                    b.MovementType = payment.MovementType;
                     await dbContext.SaveChangesAsync();
                 }
             }

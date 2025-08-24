@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 
-namespace QuickApp.Core.Models {
+namespace Torgay.Core.Models {
     public class ClientEntry : BaseEntity {
         [Comment("Идентификатор клиента")]
         public Guid? Client_id { get; set; }

@@ -7,7 +7,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-namespace QuickApp.Core.Models.Account
+namespace Torgay.Core.Models.Account
 {
     public class ApplicationPermission(string name, string value, string groupName, string? description = null)
     {

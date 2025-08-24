@@ -5,7 +5,7 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-namespace QuickApp.Core.Models
+namespace Torgay.Core.Models
 {
     public interface IAuditableEntity
     {

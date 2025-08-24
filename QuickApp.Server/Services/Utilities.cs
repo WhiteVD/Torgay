@@ -8,7 +8,7 @@
 using System.Security.Claims;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
-namespace QuickApp.Server.Services
+namespace Torgay.Server.Services
 {
     public static class Utilities
     {

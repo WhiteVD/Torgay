@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace QuickApp.Core.Models.Payments {
+namespace Torgay.Core.Models.Payments {
     [Table("Payment_D_BankStatement")]
     [Comment("Банковская выписка")]
     public class BankStatement : ClientEntry {

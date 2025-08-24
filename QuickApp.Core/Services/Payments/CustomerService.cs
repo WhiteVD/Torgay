@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuickApp.Core.DTO;
-using QuickApp.Core.Infrastructure;
-using QuickApp.Core.Models.Access;
-using QuickApp.Core.Models.Payments;
-using QuickApp.Core.Services.Payments.Interfaces;
-using QuickApp.Server.DTO;
+using Torgay.Core.DTO;
+using Torgay.Core.Infrastructure;
+using Torgay.Core.Models.Access;
+using Torgay.Core.Models.Payments;
+using Torgay.Core.Services.Payments.Interfaces;
+using Torgay.Server.DTO;
 using System.Linq.Expressions;
 
-namespace QuickApp.Core.Services.Payments {
+namespace Torgay.Core.Services.Payments {
     public class CustomerService(ApplicationDbContext dbContext) : ICustomerService {
         /// <summary>
         /// Gets the specified identifier.
@@ -30,7 +30,7 @@ namespace QuickApp.Core.Services.Payments {
                 string searchTerm = queryParams.SearchTerm.ToLower();
                 query = query.Where(p =>
                     p.Title.ToLower().Contains(searchTerm) ||
-                    p.INN.ToLower().Contains(searchTerm));
+                    p.BIN.ToLower().Contains(searchTerm));
             }
 
             // Фильтрация
@@ -93,7 +93,7 @@ namespace QuickApp.Core.Services.Payments {
         private Expression<Func<Customer, object>> GetSortProperty(string propertyName) {
             return propertyName.ToLower() switch {
                 "title" => p => p.Title,
-                "inn" => p => p.INN,
+                "inn" => p => p.BIN,
                 _ => p => p.Id
             };
         }

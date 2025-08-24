@@ -5,9 +5,9 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-using QuickApp.Core.Models.Account;
+using Torgay.Core.Models.Account;
 
-namespace QuickApp.Server.OIDC
+namespace Torgay.Server.OIDC
 {
     public class UserResolutionResult
     {

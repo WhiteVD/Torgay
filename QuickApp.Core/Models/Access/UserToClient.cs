@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuickApp.Core.Models.Account;
+using Torgay.Core.Models.Account;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace QuickApp.Core.Models.Access {
+namespace Torgay.Core.Models.Access {
     [Table("Global_C_UserToClient")]
     public class UserToClient : BaseEntity {
         [Required]

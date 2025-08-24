@@ -7,11 +7,11 @@
 
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using QuickApp.Core.Services.Account;
-using QuickApp.Server.Attributes;
-using QuickApp.Server.Services;
+using Torgay.Core.Services.Account;
+using Torgay.Server.Attributes;
+using Torgay.Server.Services;
 
-namespace QuickApp.Server.Controllers
+namespace Torgay.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

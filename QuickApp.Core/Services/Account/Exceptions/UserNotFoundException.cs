@@ -5,7 +5,7 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-namespace QuickApp.Core.Services.Account
+namespace Torgay.Core.Services.Account
 {
     /// <summary>
     /// The exception that is thrown when an attempt to access a particular User Account fails.

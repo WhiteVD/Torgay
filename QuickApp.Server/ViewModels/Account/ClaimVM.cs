@@ -5,7 +5,7 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-namespace QuickApp.Server.ViewModels.Account
+namespace Torgay.Server.ViewModels.Account
 {
     public class ClaimVM
     {

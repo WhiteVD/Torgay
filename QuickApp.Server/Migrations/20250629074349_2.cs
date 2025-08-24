@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace QuickApp.Server.Migrations
+namespace Torgay.Server.Migrations
 {
     /// <inheritdoc />
     public partial class _2 : Migration

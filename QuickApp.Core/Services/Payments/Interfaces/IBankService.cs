@@ -1,13 +1,13 @@
-﻿using QuickApp.Core.DTO;
-using QuickApp.Core.Models.Payments;
-using QuickApp.Server.DTO;
+﻿using Torgay.Core.DTO;
+using Torgay.Core.Models.Payments;
+using Torgay.Server.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuickApp.Core.Services.Payments.Interfaces {
+namespace Torgay.Core.Services.Payments.Interfaces {
     public interface IBankService {
         void Add(Bank bank);
         void Delete(Guid id);

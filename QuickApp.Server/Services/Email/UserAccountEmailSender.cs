@@ -6,9 +6,9 @@
 // ======================================
 
 using Microsoft.Extensions.Options;
-using QuickApp.Server.Configuration;
+using Torgay.Server.Configuration;
 
-namespace QuickApp.Server.Services.Email
+namespace Torgay.Server.Services.Email
 {
     public class UserAccountEmailSender(IOptions<AppSettings> config, ILogger<EmailSender> logger) :
         EmailSender(config, logger)

@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuickApp.Core.DTO;
-using QuickApp.Core.Infrastructure;
-using QuickApp.Core.Models.Payments;
-using QuickApp.Core.Services.Payments.Interfaces;
-using QuickApp.Server.DTO;
+using Torgay.Core.DTO;
+using Torgay.Core.Infrastructure;
+using Torgay.Core.Models.Payments;
+using Torgay.Core.Services.Payments.Interfaces;
+using Torgay.Server.DTO;
 using System.Linq.Expressions;
 
-namespace QuickApp.Core.Services.Payments {
+namespace Torgay.Core.Services.Payments {
     public class CurrencyService(ApplicationDbContext dbContext) : ICurrencyService {
         /// <summary>
         /// Gets the specified identifier.

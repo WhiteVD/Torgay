@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace QuickApp.Server.DTO {
+namespace Torgay.Server.DTO {
     public class ListQueryParams {
         [Range(1, int.MaxValue)]
         public int Page { get; set; } = 1;

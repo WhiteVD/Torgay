@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace QuickApp.Server.Authorization
+namespace Torgay.Server.Authorization
 {
     // Swagger IOperationFilter implementation that will decide which api action needs authorization
     internal class SwaggerAuthorizeOperationFilter : IOperationFilter
