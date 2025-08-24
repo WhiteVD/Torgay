@@ -195,7 +195,8 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-builder.Services.AddAutoMapper(typeof(Program));
+//builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(cfg => { }, Assembly.GetExecutingAssembly());
 
 // Configurations
 builder.Services.Configure<AppSettings>(builder.Configuration);
