@@ -1,0 +1,11 @@
+﻿using Torgay.Core.Models.Payments;
+
+namespace Torgay.Core.Services.Payments.Interfaces {
+    public interface IBCCService {
+        Task<BCC?> Get(Guid id);
+        Task<List<BCC>> GetList();
+        void Add(BCC bcc);
+        void Update(BCC bcc);
+        void Delete(Guid id);
+    }
+}
