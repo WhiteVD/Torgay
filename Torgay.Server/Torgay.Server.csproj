@@ -43,9 +43,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Torgay.client\torgay.client.esproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\Torgay.Core\Torgay.Core.csproj" />
   </ItemGroup>
 
