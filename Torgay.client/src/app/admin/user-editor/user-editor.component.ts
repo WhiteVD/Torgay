@@ -1,10 +1,3 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 import { Component, OnDestroy, ViewChild, Input, OnChanges, NgZone, inject, viewChild } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgClass } from '@angular/common';

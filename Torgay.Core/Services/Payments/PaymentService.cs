@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Torgay.Core.Infrastructure;
-using Torgay.Core.Models.Access;
+using Torgay.Core.Models.Account;
 using Torgay.Core.Models.Payments;
 using Torgay.Core.Services.Payments.Interfaces;
 
@@ -19,7 +19,7 @@ namespace Torgay.Core.Services.Payments {
         /// Gets the list.
         /// </summary>
         /// <returns></returns>
-        public async Task<List<Payment>> GetList(Client client) {
+        public async Task<List<Payment>> GetList(ApplicationUser client) {
             return await dbContext.Payments.Where(x => x.Client_id == client.Id).OrderBy(c => c.ActualDate).ThenBy(c => c.PaymentId).ToListAsync();
         }
 

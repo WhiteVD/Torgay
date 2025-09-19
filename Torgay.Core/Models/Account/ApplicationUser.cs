@@ -1,11 +1,4 @@
-﻿// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace Torgay.Core.Models.Account
 {
@@ -49,5 +42,10 @@ namespace Torgay.Core.Models.Account
         /// Demo Navigation property for orders this user has processed
         /// </summary>
         //public ICollection<Order> Orders { get; } = [];
+
+        // Добавляем навигационные свойства
+        public virtual ICollection<OrganizationUser> OrganizationUsers { get; set; } = new List<OrganizationUser>();
+        public virtual ICollection<UserLicense> UserLicenses { get; set; } = new List<UserLicense>();
+        public virtual ICollection<Organization> OwnedOrganizations { get; set; } = new List<Organization>();
     }
 }

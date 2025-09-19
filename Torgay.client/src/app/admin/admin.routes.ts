@@ -1,10 +1,3 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 import { Routes } from '@angular/router';
 
 import { AuthGuard } from '../services/auth-guard';

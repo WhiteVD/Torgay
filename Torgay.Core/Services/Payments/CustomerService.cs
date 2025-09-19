@@ -1,11 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 using Torgay.Core.DTO;
 using Torgay.Core.Infrastructure;
-using Torgay.Core.Models.Access;
 using Torgay.Core.Models.Payments;
 using Torgay.Core.Services.Payments.Interfaces;
-using Torgay.Server.DTO;
-using System.Linq.Expressions;
 
 namespace Torgay.Core.Services.Payments {
     public class CustomerService(ApplicationDbContext dbContext) : ICustomerService {

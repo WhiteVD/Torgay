@@ -1,11 +1,4 @@
-﻿// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
-using System.Text.Encodings.Web;
+﻿using System.Text.Encodings.Web;
 
 namespace Torgay.Server.Services.Email
 {

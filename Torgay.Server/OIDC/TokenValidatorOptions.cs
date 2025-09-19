@@ -1,11 +1,4 @@
-﻿// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
-using Torgay.Server.OIDC.TokenValidators;
+﻿using Torgay.Server.OIDC.TokenValidators;
 
 namespace Torgay.Server.OIDC
 {

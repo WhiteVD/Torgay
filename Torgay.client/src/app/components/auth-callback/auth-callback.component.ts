@@ -1,10 +1,3 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, QueryList, inject } from '@angular/core';
 import { UpperCasePipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';

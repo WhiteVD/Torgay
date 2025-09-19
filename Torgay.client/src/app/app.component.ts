@@ -1,10 +1,3 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 import { Component, ChangeDetectorRef, OnInit, OnDestroy, inject, Renderer2, viewChild } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Router, NavigationStart, RouterLink, RouterLinkActive, RouterOutlet, IsActiveMatchOptions } from '@angular/router';

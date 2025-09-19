@@ -1,11 +1,4 @@
-﻿// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;

@@ -1,5 +1,4 @@
 ﻿using Torgay.Core.DTO;
-using Torgay.Core.Models.Access;
 using Torgay.Core.Models.Payments;
 
 namespace Torgay.Core.Services.Payments.Interfaces {

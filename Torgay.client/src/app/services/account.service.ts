@@ -1,10 +1,3 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 import { Injectable, inject } from '@angular/core';
 import { Observable, Subject, forkJoin } from 'rxjs';
 import { mergeMap, tap } from 'rxjs/operators';

@@ -1,10 +1,3 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 import { Component, OnInit, OnDestroy, inject, input, output, viewChild } from '@angular/core';
 import { FormBuilder, NgForm, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormField, MatLabel, MatError } from '@angular/material/form-field';

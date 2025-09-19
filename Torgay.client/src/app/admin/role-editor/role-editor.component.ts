@@ -1,10 +1,3 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 import { Component, Input, OnChanges, inject, input, viewChild } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';

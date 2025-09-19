@@ -1,14 +1,8 @@
-﻿// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
+using Torgay.Core.Infrastructure.Configuration;
 using Torgay.Core.Models;
-using Torgay.Core.Models.Access;
 using Torgay.Core.Models.Account;
 using Torgay.Core.Models.Payments;
 using Torgay.Core.Services.Account;
@@ -18,12 +12,6 @@ namespace Torgay.Core.Infrastructure
     public class ApplicationDbContext(DbContextOptions options, IUserIdAccessor userIdAccessor) :
         IdentityDbContext<ApplicationUser, ApplicationRole, string>(options)
     {
-        public DbSet<Organization> Organizations { get; set; }
-
-        public DbSet<Client> Clients { get; set; }
-
-        public DbSet<UserToClient> UserToClients { get; set; }
-
         public DbSet<Bank> Banks { get; set; }
 
         public DbSet<Currency> Currensies { get; set; }
@@ -53,6 +41,14 @@ namespace Torgay.Core.Infrastructure
         public DbSet<BCC> BCCs { get; set; }
 
         public DbSet<PPC> PPCs { get; set; }
+
+        public DbSet<Organization> Organizations { get; set; }
+
+        public DbSet<OrganizationUser> OrganizationUsers { get; set; }
+
+        public DbSet<License> Licenses { get; set; }
+
+        public DbSet<UserLicense> UserLicenses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -125,6 +121,12 @@ namespace Torgay.Core.Infrastructure
             //builder.Entity<OrderDetail>().Property(p => p.UnitPrice).HasColumnType(priceDecimalType);
             //builder.Entity<OrderDetail>().Property(p => p.Discount).HasColumnType(priceDecimalType);
             //builder.Entity<OrderDetail>().ToTable($"{tablePrefix}{nameof(OrderDetails)}");
+
+            // Применяем конфигурации
+            builder.ApplyConfiguration(new OrganizationConfiguration());
+            builder.ApplyConfiguration(new OrganizationUserConfiguration());
+            builder.ApplyConfiguration(new LicenseConfiguration());
+            builder.ApplyConfiguration(new UserLicenseConfiguration());
         }
 
         public override int SaveChanges()

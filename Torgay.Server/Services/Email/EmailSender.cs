@@ -1,11 +1,4 @@
-﻿// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
-using MailKit.Net.Smtp;
+﻿using MailKit.Net.Smtp;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using Torgay.Core.Services;

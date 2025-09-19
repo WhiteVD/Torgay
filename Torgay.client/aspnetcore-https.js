@@ -1,10 +1,3 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 // This script sets up HTTPS for the application using the ASP.NET Core HTTPS certificate
 const fs = require('fs');
 const spawn = require('child_process').spawn;

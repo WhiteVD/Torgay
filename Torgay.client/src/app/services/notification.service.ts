@@ -1,10 +1,3 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 import { Injectable, inject } from '@angular/core';
 import { Observable, interval } from 'rxjs';
 import { map, mergeMap, startWith } from 'rxjs/operators';

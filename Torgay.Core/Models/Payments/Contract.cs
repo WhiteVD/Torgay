@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Torgay.Core.Models.Access;
-using Torgay.Core.Models.Enums;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Torgay.Core.Models.Account;
+using Torgay.Core.Models.Enums;
 
 namespace Torgay.Core.Models.Payments {
     [Table("Payment_C_Contracts")]
@@ -38,9 +38,9 @@ namespace Torgay.Core.Models.Payments {
         public ContractStatus Status { get; set; }
 
         [Comment("Идентификатор клиента")]
-        public Guid? Client_id { get; set; }
+        public string? Client_id { get; set; }
         [NotMapped]
-        public virtual Client Client { get; set; }
+        public virtual ApplicationUser Client { get; set; }
 
         [Comment("Идентификатор организации")]
         public Guid? OrganizationId { get; set; }

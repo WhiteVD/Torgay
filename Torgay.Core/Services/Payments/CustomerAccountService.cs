@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Torgay.Core.Infrastructure;
-using Torgay.Core.Models.Access;
 using Torgay.Core.Models.Payments;
 using Torgay.Core.Services.Payments.Interfaces;
 

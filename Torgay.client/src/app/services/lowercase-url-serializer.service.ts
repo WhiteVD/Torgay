@@ -1,10 +1,3 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 import { Injectable } from "@angular/core";
 import { DefaultUrlSerializer, UrlTree } from "@angular/router";
 import { Utilities } from "./utilities";

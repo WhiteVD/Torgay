@@ -1,10 +1,3 @@
-// ======================================
-// Author: Ebenezer Monney
-// Copyright (c) 2023 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-
 import { Component } from '@angular/core';
 import { MatAnchor } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';

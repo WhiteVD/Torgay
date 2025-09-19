@@ -4,7 +4,7 @@ using System.ComponentModel;
 namespace Torgay.Core.Models {
     public class ClientEntry : BaseEntity {
         [Comment("Идентификатор клиента")]
-        public Guid? Client_id { get; set; }
+        public string? Client_id { get; set; }
 
         [Comment("Идентификатор организации")]
         public Guid? Organization_id { get; set; }

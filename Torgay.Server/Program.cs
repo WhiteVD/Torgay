@@ -6,10 +6,14 @@ using Microsoft.IdentityModel.Logging;
 using Microsoft.OpenApi.Models;
 using OpenIddict.Validation.AspNetCore;
 using Quartz;
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using Torgay.Core.Infrastructure;
+using Torgay.Core.Infrastructure.Configuration;
 using Torgay.Core.Models.Account;
 using Torgay.Core.Services;
 using Torgay.Core.Services.Account;
+using Torgay.Core.Services.Account.Interfaces;
 using Torgay.Core.Services.Payments;
 using Torgay.Core.Services.Payments.Interfaces;
 using Torgay.Server.Authorization;
@@ -19,8 +23,6 @@ using Torgay.Server.OIDC;
 using Torgay.Server.OIDC.TokenValidators;
 using Torgay.Server.Services;
 using Torgay.Server.Services.Email;
-using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
 using static OpenIddict.Abstractions.OpenIddictConstants;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -222,6 +224,8 @@ builder.Services.AddScoped<IPPCService, PPCService>();
 //builder.Services.AddScoped<ICustomerService, CustomerService>();
 //builder.Services.AddScoped<IProductService, ProductService>();
 //builder.Services.AddScoped<IOrdersService, OrdersService>();
+builder.Services.AddScoped<IOrganizationService, OrganizationService>();
+builder.Services.AddScoped<ILicenseService, LicenseService>();
 
 // Other Services
 builder.Services.AddScoped<IEmailSender, EmailSender>();

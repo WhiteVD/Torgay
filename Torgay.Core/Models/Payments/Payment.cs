@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Torgay.Core.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
+using Torgay.Core.Models.Enums;
 
 namespace Torgay.Core.Models.Payments {
     [Table("Payment_D_Payments")]

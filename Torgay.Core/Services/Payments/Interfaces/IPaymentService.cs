@@ -1,4 +1,4 @@
-﻿using Torgay.Core.Models.Access;
+﻿using Torgay.Core.Models.Account;
 using Torgay.Core.Models.Payments;
 
 namespace Torgay.Core.Services.Payments.Interfaces {
@@ -6,7 +6,7 @@ namespace Torgay.Core.Services.Payments.Interfaces {
         void Add(Payment payment);
         void Delete(Guid id);
         Task<Payment?> Get(Guid id);
-        Task<List<Payment>> GetList(Client client);
+        Task<List<Payment>> GetList(ApplicationUser client);
         void Update(Payment payment);
     }
 }
