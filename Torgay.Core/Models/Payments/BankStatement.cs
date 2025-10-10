@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Torgay.Core.Models.Payments {
+    /// <summary>
+    /// Банковская выписка
+    /// </summary>
     [Table("Payment_D_BankStatement")]
     [Comment("Банковская выписка")]
     public class BankStatement : ClientEntry {
