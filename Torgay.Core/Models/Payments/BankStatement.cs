@@ -1,6 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Torgay.Core.Models.Access;
+using Torgay.Core.Models.Account;
 
 namespace Torgay.Core.Models.Payments {
     /// <summary>
@@ -10,32 +13,49 @@ namespace Torgay.Core.Models.Payments {
     [Comment("Банковская выписка")]
     public class BankStatement : ClientEntry {
         [Required]
-        [Comment("Номер документа")]
-        public required string DocumentNumber { get; set; }
+        [StringLength(50)]
+        public string AccountNumber { get; set; } = string.Empty;
 
         [Required]
-        [Comment("Дата операции")]
-        public DateTime Date { get; set; }
+        [StringLength(10)]
+        public string Currency { get; set; } = "KZT";
 
-        [Comment("Дебет")]
-        public decimal DR { get; set; }
+        [Required]
+        public DateTime PeriodFrom { get; set; }
 
-        [Comment("Кредит")]
-        public decimal CR { get; set; }
+        [Required]
+        public DateTime PeriodTo { get; set; }
 
-        [Comment("Наименование бенефициара / отправителя денег")]
-        public string Recipient { get; set; }
+        [Required]
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal InitialBalance { get; set; }
 
-        [Comment("ИИК бенефициара / отправителя денег")]
-        public string IIC { get; set; }
+        [Required]
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal FinalBalance { get; set; }
 
-        [Comment("БИК банка бенефициара (отправителя денег)")]
-        public string BIC { get; set; }
+        public DateTime LastMovementDate { get; set; }
 
-        [Comment("КНП")]
-        public string PPC { get; set; }
+        // Эти поля дублируются для сохранения данных на момент выписки
+        [Required]
+        [StringLength(12)]
+        public string StatementOrganizationBin { get; set; } = string.Empty;
 
-        [Comment("Назначение платежа")]
-        public string PaymentPurpose { get; set; }
+        [Required]
+        public string StatementOrganizationName { get; set; } = string.Empty;
+
+        // Навигационное свойство для транзакций
+        [NotMapped]
+        public virtual ICollection<BankTransaction> Transactions { get; set; } = new List<BankTransaction>();
+
+        // Ссылка на пользователя
+        [NotMapped]
+        public virtual ApplicationUser User { get; set; } = null!;
+
+        /// <summary>
+        /// Конструктор для установки базовых свойств ClientEntry
+        /// </summary>
+        public BankStatement() {
+        }
     }
 }

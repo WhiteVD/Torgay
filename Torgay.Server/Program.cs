@@ -223,6 +223,16 @@ builder.Services.AddScoped<IPPCService, PPCService>();
 //builder.Services.AddScoped<IProductService, ProductService>();
 //builder.Services.AddScoped<IOrdersService, OrdersService>();
 
+// Регистрация сервисов банковских выписок
+builder.Services.AddScoped<BankStatementService>();
+builder.Services.AddScoped<TxtBankStatementParser>();
+builder.Services.AddScoped<XlsxBankStatementParser>();
+builder.Services.AddScoped<PdfBankStatementParser>();
+
+builder.Services.AddScoped<IBankStatementParser>(provider => provider.GetRequiredService<TxtBankStatementParser>());
+builder.Services.AddScoped<IBankStatementParser>(provider => provider.GetRequiredService<XlsxBankStatementParser>());
+builder.Services.AddScoped<IBankStatementParser>(provider => provider.GetRequiredService<PdfBankStatementParser>());
+
 // Other Services
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddScoped<UserAccountEmailSender>();

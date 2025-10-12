@@ -54,6 +54,10 @@ namespace Torgay.Core.Infrastructure
 
         public DbSet<PPC> PPCs { get; set; }
 
+        public DbSet<BankStatement> BankStatements { get; set; }
+
+        public DbSet<BankTransaction> BankTransactions { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
