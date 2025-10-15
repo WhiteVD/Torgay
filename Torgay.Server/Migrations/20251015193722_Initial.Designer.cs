@@ -12,7 +12,7 @@ using Torgay.Core.Infrastructure;
 namespace Torgay.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250908080551_Initial")]
+    [Migration("20251015193722_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace Torgay.Server.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.8")
+                .HasAnnotation("ProductVersion", "9.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -591,6 +591,93 @@ namespace Torgay.Server.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Torgay.Core.Models.Payments.BankTransaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<Guid>("BankStatementId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal?>("Credit")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("Debit")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("DocumentNumber")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("DocumentType")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<DateTime>("OperationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("PayerBankBik")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("PayerBinInn")
+                        .HasMaxLength(12)
+                        .HasColumnType("character varying(12)");
+
+                    b.Property<string>("PayerIik")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("PayerKbe")
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<string>("PayerName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("PaymentCode")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<string>("PaymentPurpose")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("RecipientBankBik")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("RecipientBinInn")
+                        .HasMaxLength(12)
+                        .HasColumnType("character varying(12)");
+
+                    b.Property<string>("RecipientIik")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("RecipientKbe")
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<string>("RecipientName")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BankStatementId");
+
+                    b.ToTable("BankTransactions");
+                });
+
             modelBuilder.Entity("Torgay.Core.Models.Payments.ContractType", b =>
                 {
                     b.Property<Guid>("Id")
@@ -799,6 +886,66 @@ namespace Torgay.Server.Migrations
                     b.HasBaseType("Torgay.Core.Models.BaseEntity");
 
                     b.ToTable("Global_C_UserToClient");
+                });
+
+            modelBuilder.Entity("Torgay.Core.Models.Payments.BankStatement", b =>
+                {
+                    b.HasBaseType("Torgay.Core.Models.BaseEntity");
+
+                    b.Property<string>("AccountNumber")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<Guid?>("Client_id")
+                        .HasColumnType("uuid")
+                        .HasComment("Идентификатор клиента");
+
+                    b.Property<string>("Currency")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<decimal>("FinalBalance")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("InitialBalance")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean")
+                        .HasComment("Удалён?");
+
+                    b.Property<DateTime>("LastMovementDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid?>("Organization_id")
+                        .HasColumnType("uuid")
+                        .HasComment("Идентификатор организации");
+
+                    b.Property<DateTime>("PeriodFrom")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("PeriodTo")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid?>("Source_id")
+                        .HasColumnType("uuid")
+                        .HasComment("Идентификатор источника");
+
+                    b.Property<string>("StatementOrganizationBin")
+                        .IsRequired()
+                        .HasMaxLength(12)
+                        .HasColumnType("character varying(12)");
+
+                    b.Property<string>("StatementOrganizationName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.ToTable("Payment_D_BankStatement", t =>
+                        {
+                            t.HasComment("Банковская выписка");
+                        });
                 });
 
             modelBuilder.Entity("Torgay.Core.Models.Payments.Contract", b =>
@@ -1239,6 +1386,17 @@ namespace Torgay.Server.Migrations
                     b.Navigation("Authorization");
                 });
 
+            modelBuilder.Entity("Torgay.Core.Models.Payments.BankTransaction", b =>
+                {
+                    b.HasOne("Torgay.Core.Models.Payments.BankStatement", "BankStatement")
+                        .WithMany()
+                        .HasForeignKey("BankStatementId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BankStatement");
+                });
+
             modelBuilder.Entity("Torgay.Core.Models.Access.Client", b =>
                 {
                     b.HasOne("Torgay.Core.Models.BaseEntity", null)
@@ -1262,6 +1420,15 @@ namespace Torgay.Server.Migrations
                     b.HasOne("Torgay.Core.Models.BaseEntity", null)
                         .WithOne()
                         .HasForeignKey("Torgay.Core.Models.Access.UserToClient", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Torgay.Core.Models.Payments.BankStatement", b =>
+                {
+                    b.HasOne("Torgay.Core.Models.BaseEntity", null)
+                        .WithOne()
+                        .HasForeignKey("Torgay.Core.Models.Payments.BankStatement", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

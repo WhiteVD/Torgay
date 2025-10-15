@@ -78,7 +78,7 @@ namespace Torgay.Server.Migrations
                 {
                     table.PrimaryKey("PK_BaseEntity", x => x.Id);
                 },
-                comment: "Договора");
+                comment: "Банковская выписка");
 
             migrationBuilder.CreateTable(
                 name: "OpenIddictApplications",
@@ -551,6 +551,37 @@ namespace Torgay.Server.Migrations
                 comment: "Счета организации");
 
             migrationBuilder.CreateTable(
+                name: "Payment_D_BankStatement",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()", comment: "Идентификатор"),
+                    AccountNumber = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    Currency = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
+                    PeriodFrom = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    PeriodTo = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    InitialBalance = table.Column<decimal>(type: "numeric(18,2)", nullable: false),
+                    FinalBalance = table.Column<decimal>(type: "numeric(18,2)", nullable: false),
+                    LastMovementDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    StatementOrganizationBin = table.Column<string>(type: "character varying(12)", maxLength: 12, nullable: false),
+                    StatementOrganizationName = table.Column<string>(type: "text", nullable: false),
+                    Client_id = table.Column<Guid>(type: "uuid", nullable: true, comment: "Идентификатор клиента"),
+                    Organization_id = table.Column<Guid>(type: "uuid", nullable: true, comment: "Идентификатор организации"),
+                    Source_id = table.Column<Guid>(type: "uuid", nullable: true, comment: "Идентификатор источника"),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false, comment: "Удалён?")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Payment_D_BankStatement", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Payment_D_BankStatement_BaseEntity_Id",
+                        column: x => x.Id,
+                        principalTable: "BaseEntity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                },
+                comment: "Банковская выписка");
+
+            migrationBuilder.CreateTable(
                 name: "Payment_D_Payments",
                 columns: table => new
                 {
@@ -616,6 +647,43 @@ namespace Torgay.Server.Migrations
                         column: x => x.ApplicationId,
                         principalTable: "OpenIddictApplications",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BankTransactions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    BankStatementId = table.Column<Guid>(type: "uuid", nullable: false),
+                    DocumentNumber = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    OperationDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    DocumentType = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    RecipientName = table.Column<string>(type: "text", nullable: true),
+                    RecipientBinInn = table.Column<string>(type: "character varying(12)", maxLength: 12, nullable: true),
+                    RecipientIik = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
+                    RecipientBankBik = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: true),
+                    RecipientKbe = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
+                    PayerName = table.Column<string>(type: "text", nullable: true),
+                    PayerBinInn = table.Column<string>(type: "character varying(12)", maxLength: 12, nullable: true),
+                    PayerIik = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
+                    PayerBankBik = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: true),
+                    PayerKbe = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: true),
+                    Debit = table.Column<decimal>(type: "numeric(18,2)", nullable: true),
+                    Credit = table.Column<decimal>(type: "numeric(18,2)", nullable: true),
+                    PaymentPurpose = table.Column<string>(type: "text", nullable: false),
+                    PaymentCode = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BankTransactions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_BankTransactions_Payment_D_BankStatement_BankStatementId",
+                        column: x => x.BankStatementId,
+                        principalTable: "Payment_D_BankStatement",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -689,6 +757,11 @@ namespace Torgay.Server.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_BankTransactions_BankStatementId",
+                table: "BankTransactions",
+                column: "BankStatementId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_OpenIddictApplications_ClientId",
                 table: "OpenIddictApplications",
                 column: "ClientId",
@@ -739,6 +812,9 @@ namespace Torgay.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "BankTransactions");
 
             migrationBuilder.DropTable(
                 name: "Global_C_Clients");
@@ -805,6 +881,9 @@ namespace Torgay.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Payment_D_BankStatement");
 
             migrationBuilder.DropTable(
                 name: "OpenIddictAuthorizations");
